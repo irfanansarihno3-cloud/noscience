@@ -1,0 +1,4317 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title id="pageTitle">noScience — WBSSC Group C & D</title>
+<style>
+    :root{
+      --card-bg: #1a1a1a;
+      --accent: #00c3ff;
+      --danger: #ff5252;
+      --muted: #a0a0a0;
+      --max-width: 1100px;
+      --bg-dark: #0a0a0a;
+      --text-light: #f0f0f0;
+      --border-dark: #333;
+      --test-bg: #f8f8f8;
+      --mark-review: #b8860b;
+      --professional-blue: #1a4b8c;
+      --professional-light-blue: #2a6fc9;
+      --professional-green: #28a745;
+      --professional-orange: #fd7e14;
+      --whatsapp-green: #25D366;
+      --result-bg: #f0f8ff;
+    }
+    html,body{
+      height:100%;
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+    }
+    .page {min-height:100vh; display:flex; align-items:center; justify-content:center; background:var(--bg-dark);}
+   
+    .professional-landing {
+      width:100%;
+      max-width:var(--max-width);
+      margin:24px;
+      padding:40px;
+      border-radius:14px;
+      color:#fff;
+      overflow:hidden;
+      position:relative;
+      background:
+        linear-gradient(135deg, #2c5aa0 0%, #3a7bd5 50%, #2c5aa0 100%),
+        repeating-linear-gradient(0deg, transparent, transparent 20px, rgba(255,255,255,0.05) 20px, rgba(255,255,255,0.05) 21px),
+        repeating-linear-gradient(90deg, transparent, transparent 20px, rgba(255,255,255,0.05) 20px, rgba(255,255,255,0.05) 21px),
+        repeating-linear-gradient(45deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 11px),
+        repeating-linear-gradient(135deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 11px);
+      background-size: 200% 200%, auto, auto, 40px 40px, 40px 40px;
+      animation: gradientMove 18s ease infinite;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+      text-align:center;
+      border: 1px solid rgba(255,255,255,0.1);
+      position: relative;
+    }
+   
+    .modern-landing {
+      width:100%;
+      max-width:var(--max-width);
+      margin:24px;
+      padding:40px;
+      border-radius:14px;
+      color:#fff;
+      overflow:hidden;
+      position:relative;
+      background:
+        linear-gradient(135deg, #667eea 0%, #764ba2 100%),
+        radial-gradient(circle at top right, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at bottom left, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+      background-size: 200% 200%, 100% 100%, 100% 100%;
+      animation: gradientMove 15s ease infinite;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+      text-align:center;
+      border: 1px solid rgba(255,255,255,0.15);
+      position: relative;
+    }
+   
+    .gradient-landing {
+      width:100%;
+      max-width:var(--max-width);
+      margin:24px;
+      padding:40px;
+      border-radius:14px;
+      color:#fff;
+      overflow:hidden;
+      position:relative;
+      background:
+        linear-gradient(135deg, #f093fb 0%, #f5576c 100%),
+        radial-gradient(circle at top left, rgba(255, 255, 255, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+      background-size: 200% 200%, 100% 100%, 100% 100%;
+      animation: gradientMove 12s ease infinite;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+      text-align:center;
+      border: 1px solid rgba(255,255,255,0.15);
+      position: relative;
+    }
+   
+    .dark-landing {
+      width:100%;
+      max-width:var(--max-width);
+      margin:24px;
+      padding:40px;
+      border-radius:14px;
+      color:#fff;
+      overflow:hidden;
+      position:relative;
+      background:
+        linear-gradient(135deg, #2c3e50 0%, #3498db 100%),
+        radial-gradient(circle at 20% 80%, rgba(44, 62, 80, 0.7) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(52, 152, 219, 0.3) 0%, transparent 50%);
+      background-size: 200% 200%, 100% 100%, 100% 100%;
+      animation: gradientMove 20s ease infinite;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+      text-align:center;
+      border: 1px solid rgba(255,255,255,0.1);
+      position: relative;
+    }
+   
+    .professional-landing::before,
+    .modern-landing::before,
+    .gradient-landing::before,
+    .dark-landing::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background:
+        radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(120, 119, 198, 0.1) 0%, transparent 50%);
+      pointer-events: none;
+    }
+   
+    .texture-none::before {
+      display: none;
+    }
+   
+    .texture-woven::before {
+      background:
+        repeating-linear-gradient(0deg, transparent, transparent 20px, rgba(255,255,255,0.05) 20px, rgba(255,255,255,0.05) 21px),
+        repeating-linear-gradient(90deg, transparent, transparent 20px, rgba(255,255,255,0.05) 20px, rgba(255,255,255,0.05) 21px),
+        repeating-linear-gradient(45deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 11px),
+        repeating-linear-gradient(135deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 11px) !important;
+    }
+   
+    .texture-dots::before {
+      background:
+        radial-gradient(circle at 25% 25%, rgba(255,255,255,0.1) 2px, transparent 3px),
+        radial-gradient(circle at 75% 75%, rgba(255,255,255,0.1) 2px, transparent 3px),
+        radial-gradient(circle at 25% 75%, rgba(255,255,255,0.1) 2px, transparent 3px),
+        radial-gradient(circle at 75% 25%, rgba(255,255,255,0.1) 2px, transparent 3px) !important;
+      background-size: 50px 50px;
+    }
+   
+    .texture-lines::before {
+      background:
+        repeating-linear-gradient(0deg, transparent, transparent 5px, rgba(255,255,255,0.03) 5px, rgba(255,255,255,0.03) 10px),
+        repeating-linear-gradient(90deg, transparent, transparent 5px, rgba(255,255,255,0.02) 5px, rgba(255,255,255,0.02) 10px) !important;
+    }
+   
+    .texture-grid::before {
+      background:
+        linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px) !important;
+      background-size: 20px 20px;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%, 0 0, 0 0, 0 0, 0 0; }
+      50%{ background-position: 100% 50%, 0 0, 0 0, 0 0, 0 0; }
+      100%{ background-position: 0% 50%, 0 0, 0 0, 0 0, 0 0; }
+    }
+
+    .professional-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid rgba(255,255,255,0.2);
+      position: relative;
+      z-index: 2;
+    }
+
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .institute-name {
+      font-size: 24px;
+      font-weight: 800;
+      color: white;
+    }
+
+    .institute-tagline {
+      font-size: 14px;
+      color: rgba(255,255,255,0.8);
+      margin-top: 5px;
+    }
+
+    .visitor-counter {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 700;
+      color: white;
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+
+    .main-content {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 30px;
+      margin-top: 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .welcome-section {
+      text-align: left;
+      background: rgba(255,255,255,0.1);
+      padding: 25px;
+      border-radius: 10px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .welcome-title {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: white;
+    }
+
+    .welcome-text {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .feature-card {
+      background: rgba(255,255,255,0.1);
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      transition: transform 0.3s ease;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      background: rgba(255,255,255,0.15);
+    }
+
+    .feature-icon {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .feature-title {
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .feature-desc {
+      font-size: 12px;
+      color: rgba(255,255,255,0.8);
+    }
+
+    .notice-board {
+      background: rgba(255,255,255,0.1);
+      padding: 20px;
+      border-radius: 10px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.2);
+      position: relative;
+      z-index: 2;
+    }
+
+    .notice-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(255,255,255,0.3);
+    }
+
+    .notice-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: white;
+    }
+
+    .notice-badge {
+      background: var(--professional-orange);
+      color: white;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .notice-list {
+      max-height: 300px;
+      overflow-y: auto;
+    }
+
+    .notice-item {
+      background: rgba(255,255,255,0.1);
+      padding: 12px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      border-left: 4px solid var(--professional-green);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .notice-item.past {
+      border-left-color: var(--muted);
+      opacity: 0.8;
+    }
+
+    .notice-date {
+      font-size: 12px;
+      color: var(--accent);
+      margin-bottom: 5px;
+    }
+
+    .notice-text {
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    .notice-type {
+      font-size: 11px;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    .materials-section {
+      margin-top: 30px;
+      background: rgba(255,255,255,0.1);
+      padding: 25px;
+      border-radius: 10px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.2);
+      position: relative;
+      z-index: 2;
+    }
+
+    .materials-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .materials-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: white;
+    }
+
+    .materials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 15px;
+    }
+
+    .material-card {
+      background: rgba(255,255,255,0.1);
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      transition: transform 0.3s ease;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .material-card:hover {
+      transform: translateY(-5px);
+      background: rgba(255,255,255,0.15);
+    }
+
+    .material-icon {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: var(--accent);
+    }
+
+    .material-name {
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .material-desc {
+      font-size: 12px;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 10px;
+    }
+
+    .download-btn {
+      background: var(--professional-green);
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 5px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .action-buttons {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 30px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .action-btn {
+      padding: 15px 30px;
+      font-weight: 800;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      transition: all 0.3s ease;
+    }
+
+    .action-btn.primary {
+      background: var(--professional-green);
+      color: white;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    .action-btn.secondary {
+      background: var(--professional-orange);
+      color: white;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    .action-btn.admin {
+      background: #6c757d;
+      color: white;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    .action-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.4);
+    }
+
+    .logo-container {
+      perspective: 1000px;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .energy-core {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: radial-gradient(circle at center, #001122 0%, #000811 70%);
+      box-shadow:
+        0 0 0 2px #00c3ff,
+        0 0 20px #00c3ff,
+        inset 0 0 20px rgba(0, 195, 255, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform-style: preserve-3d;
+      animation: coreRotate 20s linear infinite, coreGlow 4s ease-in-out infinite alternate;
+    }
+
+    .core-inner {
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: radial-gradient(circle at center, #00c3ff 0%, transparent 70%);
+      box-shadow:
+        0 0 30px #00c3ff,
+        inset 0 0 20px rgba(0, 195, 255, 0.5);
+      animation: innerPulse 3s ease-in-out infinite alternate;
+    }
+
+    .energy-arc {
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 2px solid transparent;
+      border-top: 2px solid #00c3ff;
+      animation: arcRotate 8s linear infinite;
+    }
+
+    .energy-arc:nth-child(2) {
+      width: 160px;
+      height: 160px;
+      border-top: 2px solid #00a2ff;
+      animation: arcRotateReverse 6s linear infinite;
+    }
+
+    .energy-arc:nth-child(3) {
+      width: 140px;
+      height: 140px;
+      border-top: 2px solid #0080ff;
+      animation: arcRotate 10s linear infinite;
+    }
+
+    .logo-text {
+      position: absolute;
+      font-size: 22px;
+      font-weight: 800;
+      color: #00c3ff;
+      text-shadow: 0 0 10px #00c3ff, 0 0 20px #00c3ff;
+      letter-spacing: 2px;
+      z-index: 10;
+      text-transform: uppercase;
+    }
+
+    @keyframes coreRotate {
+      0% { transform: rotateY(0deg) rotateX(5deg); }
+      100% { transform: rotateY(360deg) rotateX(5deg); }
+    }
+
+    @keyframes coreGlow {
+      0% { box-shadow: 0 0 0 2px #00c3ff, 0 0 20px #00c3ff, inset 0 0 20px rgba(0, 195, 255, 0.2); }
+      100% { box-shadow: 0 0 0 4px #00c3ff, 0 0 40px #00c3ff, inset 0 0 30px rgba(0, 195, 255, 0.4); }
+    }
+
+    @keyframes innerPulse {
+      0% { transform: scale(1); opacity: 0.7; }
+      100% { transform: scale(1.1); opacity: 1; }
+    }
+
+    @keyframes arcRotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes arcRotateReverse {
+      0% { transform: rotate(360deg); }
+      100% { transform: rotate(0deg); }
+    }
+
+    .subtitle {
+      margin-top:6px;
+      color:#f0f0f0;
+      background:rgba(30, 30, 30, 0.85);
+      display:inline-block;
+      padding:8px 14px;
+      border-radius:10px;
+      font-weight:700;
+      border: 1px solid #333;
+    }
+    .creator { margin-top:12px; color:rgba(200,200,200,0.7); font-weight:600; }
+    .landing-footer { margin-top:26px; display:flex; gap:12px; justify-content:center; }
+    .start-btn{
+      padding:14px 26px;
+      font-weight:800;
+      border-radius:12px;
+      border:none;
+      cursor:pointer;
+      background:#003366;
+      color:#fff;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+      border: 1px solid #00c3ff;
+    }
+    .pulse { animation: pulse 2.4s infinite; }
+    @keyframes pulse {
+      0%{ transform:scale(1); box-shadow:0 8px 30px rgba(0,0,0,0.5);}
+      50%{ transform:scale(1.03); box-shadow:0 18px 40px rgba(0, 195, 255, 0.3);}
+      100%{ transform:scale(1); box-shadow:0 8px 30px rgba(0,0,0,0.5);}
+    }
+
+    .whatsapp-section {
+      margin-top: 30px;
+      background: rgba(255,255,255,0.1);
+      padding: 25px;
+      border-radius: 10px;
+      backdrop-filter: blur(10px);
+      text-align: center;
+      border: 1px solid rgba(37, 211, 102, 0.3);
+      position: relative;
+      z-index: 2;
+    }
+
+    .whatsapp-header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 15px;
+      gap: 10px;
+    }
+
+    .whatsapp-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: white;
+    }
+
+    .whatsapp-logo {
+      font-size: 28px;
+    }
+
+    .whatsapp-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .whatsapp-number {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--whatsapp-green);
+      background: rgba(37, 211, 102, 0.1);
+      padding: 10px 20px;
+      border-radius: 8px;
+      border: 1px solid rgba(37, 211, 102, 0.3);
+    }
+
+    .whatsapp-message {
+      font-size: 16px;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 10px;
+    }
+
+    .whatsapp-button {
+      background: var(--whatsapp-green);
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .whatsapp-button:hover {
+      background: #128C7E;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    /* Main app styles */
+    .app-wrap { width:100%; max-width:var(--max-width); margin:24px auto; padding:18px; box-sizing:border-box; }
+    .card{ background:var(--card-bg); border-radius:10px; padding:16px; box-shadow:0 8px 30px rgba(0,0,0,0.3); border: 1px solid var(--border-dark); }
+    .row{ display:flex; gap:12px; align-items:center; }
+    input, select, textarea {
+      width:100%;
+      padding:10px;
+      border-radius:8px;
+      border:1px solid #333;
+      box-sizing:border-box;
+      background: #2a2a2a;
+      color: var(--text-light);
+    }
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+    .controls { display:flex; gap:8px; flex-wrap:wrap; margin-top:12px; }
+    .btn { padding:8px 14px; border-radius:8px; border:0; cursor:pointer; font-weight:700; }
+    .btn-green { background:var(--accent); color:#000; }
+    .btn-red { background:var(--danger); color:#fff; }
+    .btn-ghost { background:transparent; border:1px solid #444; color:#f0f0f0; }
+    .btn-black { background:#000; color:#fff; border:1px solid #444; }
+    .btn-mark { background:var(--mark-review); color:#fff; }
+    .btn-clear { background:#6c757d; color:#fff; }
+    .timer { font-weight:800; color:var(--accent); }
+    .question-box { margin-top:12px; padding:12px; background:#222; border-radius:8px; box-shadow:0 6px 18px rgba(0,0,0,0.2); border: 1px solid #333; }
+
+    /* MCQ Options with A,B,C,D labels and right-aligned radio buttons */
+    .option {
+      margin:8px 0;
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      padding: 10px;
+      border-radius: 6px;
+      background: #2a2a2a;
+      border: 1px solid #333;
+      transition: all 0.2s;
+    }
+
+    .option:hover {
+      background: #333;
+      border-color: #555;
+    }
+
+    .option-content {
+      display: flex;
+      align-items: center;
+      flex-grow: 1;
+    }
+
+    .option-label {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      background: #333;
+      border-radius: 50%;
+      margin-right: 12px;
+      font-weight: 700;
+      font-size: 14px;
+      border: 2px solid #555;
+      color: #f0f0f0;
+    }
+
+    .option-radio {
+      margin-left: auto;
+    }
+
+    .section-header { font-weight:800; margin-top:12px; color: var(--accent); }
+    .small { color:var(--muted); font-size:13px; }
+    .nav-grid { display:flex; gap:8px; flex-wrap:wrap; margin-top:10px; }
+    .nav-item {
+      padding:8px 10px;
+      border-radius:8px;
+      background:#2a2a2a;
+      border:1px solid #444;
+      cursor:pointer;
+      font-weight:700;
+      font-size:13px;
+      color: #f0f0f0;
+    }
+    .nav-item:hover {
+      background: #333;
+      border-color: #555;
+    }
+    .question-indexes { display:flex; gap:6px; flex-wrap:wrap; margin-top:10px; }
+    .q-pill {
+      padding:6px 8px;
+      background:#333;
+      border-radius:6px;
+      font-size:13px;
+      cursor:pointer;
+      color: #f0f0f0;
+      border: 1px solid #444;
+    }
+    .q-pill.marked { background: var(--mark-review); color: white; }
+    .q-pill.answered { background: #4caf50; color: white; }
+    .result-box { margin-top:12px; padding:12px; background:#222; border-radius:8px; border: 1px solid #333; }
+    .correct{ color:#4caf50; font-weight:700; }
+    .wrong{ color:#f44336; font-weight:700; }
+    footer.small { margin-top:14px; color:#888; font-size:13px; }
+
+    /* Admin panel styles */
+    .user-results { margin-top: 20px; }
+    .user-card { background: #2a2a2a; border-radius: 8px; padding: 15px; margin-bottom: 15px; border-left: 4px solid var(--accent); border: 1px solid #333; }
+    .user-header { display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    .user-name { font-weight: 700; font-size: 18px; color: #f0f0f0; }
+    .user-meta { color: var(--muted); font-size: 14px; }
+    .user-score { font-size: 16px; font-weight: 700; color: var(--accent); }
+    .section-score { display: flex; justify-content: space-between; margin-top: 8px; padding-top: 8px; border-top: 1px solid #444; }
+    .section-name { font-weight: 600; color: #f0f0f0; }
+    .section-stats { color: var(--muted); }
+
+    /* Admin Management Sections */
+    .admin-section {
+      margin-top: 20px;
+      padding: 15px;
+      background: #2a2a2a;
+      border-radius: 8px;
+      border: 1px solid #444;
+    }
+
+    .admin-section-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: var(--accent);
+      border-bottom: 1px solid #444;
+      padding-bottom: 8px;
+    }
+
+    .notice-form, .material-form, .whatsapp-form, .website-form {
+      display: grid;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .form-label {
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .notice-list-admin, .material-list-admin {
+      max-height: 300px;
+      overflow-y: auto;
+      margin-top: 15px;
+    }
+
+    .notice-item-admin, .material-item-admin {
+      background: #333;
+      padding: 12px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .notice-info, .material-info {
+      flex-grow: 1;
+    }
+
+    .notice-actions, .material-actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .btn-small {
+      padding: 5px 10px;
+      font-size: 12px;
+    }
+
+    /* Test Filter Styles */
+    .test-filter {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 15px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .test-filter select {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .test-filter .btn {
+      white-space: nowrap;
+    }
+
+    /* Improvement suggestions */
+    .improvement-box {
+      margin-top: 20px;
+      padding: 15px;
+      background: #1a2a1a;
+      border-radius: 8px;
+      border: 1px solid #2a5c2a;
+    }
+    .improvement-header {
+      color: #4caf50;
+      font-weight: 700;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+    .weak-subject {
+      background: rgba(255, 100, 100, 0.1);
+      padding: 10px;
+      border-radius: 6px;
+      margin: 8px 0;
+      border-left: 4px solid #ff5252;
+    }
+    .resource-list {
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+    .resource-item {
+      margin: 5px 0;
+    }
+    .resource-link {
+      color: #00c3ff;
+      text-decoration: none;
+    }
+    .resource-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Test page background */
+    .test-page {
+      background-color: var(--test-bg);
+      color: #333;
+      min-height: 100vh;
+    }
+    .test-page .card {
+      background: white;
+      color: #333;
+      border: 1px solid #ddd;
+    }
+    .test-page .question-box {
+      background: #f5f5f5;
+      color: #333;
+      border: 1px solid #ddd;
+    }
+    .test-page .option {
+      background: #f0f0f0;
+      color: #333;
+      border: 1px solid #ddd;
+    }
+    .test-page .option:hover {
+      background: #e8e8e8;
+      border-color: #ccc;
+    }
+    .test-page .option-label {
+      background: #e0e0e0;
+      color: #333;
+      border: 2px solid #ccc;
+    }
+    .test-page .nav-item {
+      background: #f0f0f0;
+      color: #333;
+      border: 1px solid #ddd;
+    }
+    .test-page .nav-item:hover {
+      background: #e8e8e8;
+      border-color: #ccc;
+    }
+    .test-page .q-pill {
+      background: #e0e0e0;
+      color: #333;
+      border: 1px solid #ccc;
+    }
+    .test-page .q-pill.marked {
+      background: var(--mark-review);
+      color: white;
+    }
+    .test-page .q-pill.answered {
+      background: #4caf50;
+      color: white;
+    }
+    .test-page .small {
+      color: #666;
+    }
+
+    /* Result page background */
+    .result-page {
+      background-color: var(--result-bg);
+      color: #333;
+      min-height: 100vh;
+    }
+    .result-page .card {
+      background: white;
+      color: #333;
+      border: 1px solid #ddd;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    .result-page .question-box {
+      background: #f9f9f9;
+      color: #333;
+      border: 1px solid #ddd;
+    }
+    .result-page .option {
+      background: #f5f5f5;
+      color: #333;
+      border: 1px solid #ddd;
+    }
+    .result-page .option:hover {
+      background: #e8e8e8;
+      border-color: #ccc;
+    }
+    .result-page .option-label {
+      background: #e0e0e0;
+      color: #333;
+      border: 2px solid #ccc;
+    }
+    .result-page .nav-item {
+      background: #f0f0f0;
+      color: #333;
+      border: 1px solid #ddd;
+    }
+    .result-page .nav-item:hover {
+      background: #e8e8e8;
+      border-color: #ccc;
+    }
+    .result-page .q-pill {
+      background: #e0e0e0;
+      color: #333;
+      border: 1px solid #ccc;
+    }
+    .result-page .q-pill.marked {
+      background: var(--mark-review);
+      color: white;
+    }
+    .result-page .q-pill.answered {
+      background: #4caf50;
+      color: white;
+    }
+    .result-page .small {
+      color: #666;
+    }
+
+    /* Mock Test Specific Styles */
+    .mock-test-section {
+      margin-top: 20px;
+      background: rgba(255,255,255,0.1);
+      padding: 25px;
+      border-radius: 10px;
+      backdrop-filter: blur(10px);
+      position: relative;
+      z-index: 2;
+    }
+
+    .mock-test-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .mock-test-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: white;
+    }
+
+    .mock-test-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 15px;
+    }
+
+    .mock-test-card {
+      background: rgba(255,255,255,0.1);
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      transition: transform 0.3s ease;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .mock-test-card:hover {
+      transform: translateY(-5px);
+      background: rgba(255,255,255,0.15);
+    }
+
+    .mock-test-icon {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: var(--accent);
+    }
+
+    .mock-test-name {
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .mock-test-desc {
+      font-size: 12px;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 10px;
+    }
+
+    .start-mock-btn {
+      background: var(--professional-green);
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 5px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .pdf-upload-area {
+      border: 2px dashed #555;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      margin: 15px 0;
+      background: rgba(255,255,255,0.05);
+    }
+
+    .pdf-upload-area.active {
+      border-color: var(--accent);
+      background: rgba(0, 195, 255, 0.1);
+    }
+
+    .pdf-preview {
+      margin-top: 15px;
+      padding: 10px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 8px;
+    }
+
+    .pdf-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .pdf-name {
+      font-weight: 700;
+    }
+
+    .pdf-size {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* Registration Table */
+    .registrations-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+
+    .registrations-table th,
+    .registrations-table td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #444;
+    }
+
+    .registrations-table th {
+      background: #333;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .registrations-table tr:hover {
+      background: #2a2a2a;
+    }
+
+    /* Stats Cards */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin: 20px 0;
+    }
+
+    .stat-card {
+      background: #2a2a2a;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      border: 1px solid #444;
+    }
+
+    .stat-number {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 5px;
+    }
+
+    .stat-label {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    /* Tabs for Admin Dashboard */
+    .admin-tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 10px;
+      flex-wrap: wrap;
+    }
+
+    .admin-tab {
+      padding: 10px 20px;
+      background: #333;
+      border: 1px solid #444;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .admin-tab.active {
+      background: var(--accent);
+      color: #000;
+      border-color: var(--accent);
+    }
+
+    .admin-tab:hover {
+      background: #444;
+    }
+
+    .admin-tab.active:hover {
+      background: var(--accent);
+    }
+
+    /* Test-specific user dashboards */
+    .test-users-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .test-user-card {
+      background: #333;
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid #444;
+    }
+
+    .test-user-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .test-user-name {
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .test-user-score {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .test-user-meta {
+      color: var(--muted);
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+
+    /* Security Notice */
+    .security-notice {
+      background: rgba(255, 0, 0, 0.1);
+      border: 1px solid rgba(255, 0, 0, 0.3);
+      padding: 10px;
+      border-radius: 5px;
+      margin: 10px 0;
+      text-align: center;
+    }
+
+    /* MCQ Text Input Area */
+    .mcq-text-area {
+      margin-top: 20px;
+      padding: 15px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 8px;
+      border: 1px solid #555;
+    }
+
+    .mcq-format-guide {
+      background: rgba(0, 195, 255, 0.1);
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      font-size: 12px;
+    }
+
+    .mcq-format-guide h4 {
+      margin-top: 0;
+      color: var(--accent);
+    }
+
+    /* Mock Test Settings */
+    .mock-test-settings {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    /* Enhanced Paste Section for Test Creation */
+    .paste-section {
+      margin-top: 20px;
+      padding: 15px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 8px;
+      border: 1px solid #555;
+    }
+
+    .paste-section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .paste-section-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .paste-section-content {
+      display: grid;
+      gap: 15px;
+    }
+
+    .paste-textarea {
+      min-height: 200px;
+      font-family: monospace;
+      font-size: 14px;
+    }
+
+    .paste-preview {
+      background: rgba(255,255,255,0.1);
+      padding: 15px;
+      border-radius: 8px;
+      max-height: 300px;
+      overflow-y: auto;
+    }
+
+    .paste-preview-title {
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--accent);
+    }
+
+    .preview-question {
+      background: rgba(255,255,255,0.1);
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    .preview-question-text {
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .preview-options {
+      padding-left: 20px;
+    }
+
+    .preview-option {
+      margin-bottom: 5px;
+    }
+
+    .preview-answer {
+      margin-top: 8px;
+      font-weight: 600;
+      color: #4caf50;
+    }
+
+    /* Text Customization Options */
+    .text-customization {
+      margin-top: 20px;
+      padding: 15px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 8px;
+      border: 1px solid #555;
+    }
+
+    .text-customization-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 15px;
+    }
+
+    .customization-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 15px;
+    }
+
+    .customization-group {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .customization-label {
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    /* Download Counter */
+    .download-counter {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 5px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* Visitor Counter Position */
+    .visitor-counter-bottom {
+      margin-top: 30px;
+      text-align: center;
+      padding: 10px;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    /* Test sections styling */
+    .test-section-divider {
+      margin: 20px 0;
+      border-top: 2px solid var(--accent);
+      padding-top: 15px;
+    }
+
+    .test-section-header {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 15px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #444;
+    }
+
+    /* Access Code Modal */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    .modal-content {
+      background: var(--card-bg);
+      border-radius: 10px;
+      padding: 25px;
+      max-width: 500px;
+      width: 90%;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      border: 1px solid var(--border-dark);
+    }
+
+    .modal-header {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .modal-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .modal-body {
+      margin-bottom: 20px;
+    }
+
+    .modal-footer {
+      display: flex;
+      gap: 10px;
+      justify-content: flex-end;
+    }
+
+    .access-code-input {
+      font-size: 18px;
+      text-align: center;
+      letter-spacing: 2px;
+      font-weight: 700;
+    }
+
+    /* Template Preview */
+    .template-preview {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .template-option {
+      border: 2px solid transparent;
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .template-option.selected {
+      border-color: var(--accent);
+      box-shadow: 0 0 15px rgba(0, 195, 255, 0.5);
+    }
+
+    .template-preview-box {
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+    }
+
+    .template-name {
+      text-align: center;
+      padding: 8px;
+      background: rgba(255,255,255,0.1);
+      font-size: 12px;
+    }
+
+    /* Texture Preview */
+    .texture-preview {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .texture-option {
+      border: 2px solid transparent;
+      border-radius: 6px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .texture-option.selected {
+      border-color: var(--accent);
+    }
+
+    .texture-preview-box {
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 12px;
+    }
+
+    /* Section Tabs in Test */
+    .section-tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 10px;
+      flex-wrap: wrap;
+    }
+
+    .section-tab {
+      padding: 10px 20px;
+      background: #333;
+      border: 1px solid #444;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .section-tab.active {
+      background: var(--accent);
+      color: #000;
+      border-color: var(--accent);
+    }
+
+    .section-tab:hover {
+      background: #444;
+    }
+
+    .section-tab.active:hover {
+      background: var(--accent);
+    }
+
+    /* Enhanced Result Colors */
+    .result-correct { color: #28a745; font-weight: 700; }
+    .result-wrong { color: #dc3545; font-weight: 700; }
+    .result-missed { color: #fd7e14; font-weight: 700; }
+    .result-perfect { color: #17a2b8; font-weight: 700; }
+    .result-failed { color: #dc3545; font-weight: 700; }
+
+    @media (max-width:720px){
+      .energy-core {
+        width: 150px;
+        height: 150px;
+      }
+      .core-inner {
+        width: 90px;
+        height: 90px;
+      }
+      .energy-arc {
+        width: 135px;
+        height: 135px;
+      }
+      .energy-arc:nth-child(2) {
+        width: 120px;
+        height: 120px;
+      }
+      .energy-arc:nth-child(3) {
+        width: 105px;
+        height: 105px;
+      }
+      .logo-text {
+        font-size: 18px;
+      }
+      .professional-landing, .modern-landing, .gradient-landing, .dark-landing {
+        padding:20px; margin:12px;
+      }
+      .app-wrap{ margin:8px; padding:12px; }
+      .user-header { flex-direction: column; }
+      .option {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .option-radio {
+        margin-left: 0;
+        margin-top: 10px;
+        align-self: flex-end;
+      }
+      .main-content {
+        grid-template-columns: 1fr;
+      }
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+      .materials-grid {
+        grid-template-columns: 1fr;
+      }
+      .mock-test-grid {
+        grid-template-columns: 1fr;
+      }
+      .action-buttons {
+        flex-direction: column;
+      }
+      .registrations-table {
+        font-size: 12px;
+      }
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+      .admin-tabs {
+        flex-wrap: wrap;
+      }
+      .test-users-grid {
+        grid-template-columns: 1fr;
+      }
+      .whatsapp-number {
+        font-size: 18px;
+        padding: 8px 16px;
+      }
+      .test-filter {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .test-filter select {
+        min-width: auto;
+      }
+      .mock-test-settings {
+        grid-template-columns: 1fr;
+      }
+      .customization-grid {
+        grid-template-columns: 1fr;
+      }
+      .template-preview {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .texture-preview {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .section-tabs {
+        flex-wrap: wrap;
+      }
+    }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script>
+  /**************************************************************************
+   * noScience WBSSC Group C & D — Professional Educational Portal
+   * Enhanced Features:
+   * - Fixed question parsing for up to 100 questions
+   * - Added sections tab in tests with naming option
+   * - Added admin credential change functionality
+   * - Fixed PDF downloading
+   * - Enhanced result page colors
+   * - Removed phone number limit
+   **************************************************************************/
+
+  // -------------------- Website Settings --------------------
+  let websiteSettings = JSON.parse(localStorage.getItem('noscience_website_settings')) || {
+    title: 'noScience — WBSSC Group C & D',
+    welcomeTitle: 'Prepare for WBSSC Group C & D Examinations',
+    welcomeText: 'Welcome to your comprehensive preparation platform for West Bengal Staff Selection Commission Group C & D examinations. Access mock tests, study materials, and examination updates all in one place.',
+    textCustomization: {
+      landing: { color: '#ffffff', font: 'Inter', size: '16px' },
+      test: { color: '#333333', font: 'Inter', size: '16px' },
+      admin: { color: '#f0f0f0', font: 'Inter', size: '14px' }
+    },
+    landingPage: {
+      template: 'professional',
+      backgroundColor: '#2c5aa0',
+      texture: 'woven'
+    }
+  };
+
+  // -------------------- Security Configuration --------------------
+  let adminCredentials = JSON.parse(localStorage.getItem('noscience_admin_credentials')) || {
+    id: 'SXJmYW5fQW5zYXJp', // 'Irfan_Ansari' in base64
+    password: 'S09MS0FUQV8xMjM=' // 'KOLKATA_123' in base64
+  };
+
+  const SECURITY_CONFIG = {
+    adminCredentials: adminCredentials,
+    hideAdminButton: false,
+    enableHiddenAccess: false,
+    maxLoginAttempts: 3,
+    lockoutTime: 300000
+  };
+
+  // -------------------- Security State --------------------
+  let securityState = JSON.parse(localStorage.getItem('noscience_security_state')) || {
+    loginAttempts: 0,
+    lockedUntil: 0,
+    lastAdminAccess: null
+  };
+
+  // -------------------- WhatsApp Settings --------------------
+  let whatsappSettings = JSON.parse(localStorage.getItem('noscience_whatsapp_settings')) || {
+    number: '8902060582',
+    message: 'For more enquiry or enrollment please WhatsApp.',
+    enabled: true
+  };
+
+  // -------------------- Notice Board Settings --------------------
+  let noticeBoard = JSON.parse(localStorage.getItem('noscience_notice_board')) || [
+    {
+      id: 1,
+      date: '2024-03-15',
+      text: 'New Mock Test Series Launched',
+      type: 'Update',
+      active: true
+    },
+    {
+      id: 2,
+      date: '2024-03-10',
+      text: 'Enhanced PDF Upload Feature',
+      type: 'Feature',
+      active: true
+    },
+    {
+      id: 3,
+      date: '2024-02-28',
+      text: 'Platform Performance Improvements',
+      type: 'Maintenance',
+      active: true
+    }
+  ];
+
+  // -------------------- Questions (5) --------------------
+  const questions = [
+    {id:1, section:'West Bengal Static GK Part I', q:'When was West Bengal established?', options:['26 January 1948','26 January 1949','26 January 1950','26 January 1952'], answer:'26 January 1950', explanation:'Background: After the partition of Bengal in 1947, the western part became West Bengal, a province in the Dominion of India. When the Constitution of India came into force on 26 January 1950, West Bengal became a full-fledged state within the Indian Union. Current Status: West Bengal celebrates its Statehood Day on 26 January, coinciding with India\'s Republic Day. Sources: Government of West Bengal – wb.gov.in, Constitution of India, 1950, Ministry of Home Affairs, India – State Reorganisation Archives'},
+    {id:2, section:'West Bengal Static GK Part I', q:'Who was the first Chief Minister of West Bengal?', options:['Dr. Prafulla Chandra Ghosh','Dr. Bidhan Chandra Roy','Ajoy Kumar Mukherjee','Prafulla Chandra Sen'], answer:'Dr. Prafulla Chandra Ghosh', explanation:'Background: Dr. Prafulla Chandra Ghosh served as the first Chief Minister (then called Premier) of West Bengal from 15 August 1947 to 22 January 1948. Additional Info: He was an Indian National Congress leader and an economist who later served again briefly as CM in 1967. Sources: West Bengal Legislative Assembly Secretariat – wbassembly.gov.in, Government of West Bengal – Chief Ministers\' List'},
+    {id:3, section:'West Bengal Static GK Part I', q:'Who is the longest-serving Chief Minister of West Bengal?', options:['Buddhadeb Bhattacharya','Jyoti Basu','Bidhan Chandra Roy','Mamata Banerjee'], answer:'Jyoti Basu', explanation:'Background: Jyoti Basu served as the Chief Minister from 21 June 1977 to 5 November 2000 — a record 23 years and 140 days. Additional Info: He led the Left Front government, making it one of the world\'s longest-serving democratically elected Communist regimes. Sources: Election Commission of India – eci.gov.in, Government of West Bengal Archives'},
+    {id:4, section:'West Bengal Static GK Part I', q:'What is the capital of West Bengal?', options:['Burdwan','Howrah','Siliguri','Kolkata'], answer:'Kolkata', explanation:'Background: Kolkata (formerly Calcutta) became the capital of West Bengal after India\'s Independence. Additional Info: It was the capital of British India until 1911, after which the capital shifted to Delhi. Kolkata remains the cultural and economic hub of eastern India. Sources: The Statesman, "Know Your India" Series, West Bengal Government Portal – wb.gov.in'},
+    {id:5, section:'West Bengal Static GK Part I', q:'What is the state flower of West Bengal?', options:['Lotus','Night-flowering Jasmine (Shefali)','Palash','Marigold'], answer:'Night-flowering Jasmine (Shefali)', explanation:'Background: The Night-flowering Jasmine, known locally as "Shefali" or "Shiuli," holds deep cultural significance in Bengal and is associated with autumn and Durga Puja. Additional Info: The flower is used in religious ceremonies and symbolizes purity and devotion. Sources: Government of West Bengal, Official Symbols – wb.gov.in, Botanical Survey of India'}
+  ];
+
+  // -------------------- Global Statistics --------------------
+  let globalStats = JSON.parse(localStorage.getItem('noscience_global_stats')) || {
+    totalVisitors: 12478,
+    totalRegistrations: 3421,
+    totalTestsTaken: 2987,
+    lastReset: new Date().toISOString()
+  };
+
+  // -------------------- Mock Tests Data --------------------
+  let mockTests = JSON.parse(localStorage.getItem('noscience_mock_tests')) || [
+    {
+      id: 1,
+      name: 'WBSSC Group C - Practice Test 1',
+      description: 'General Knowledge and Current Affairs',
+      questions: questions,
+      timeLimit: 45,
+      passingMarks: 60,
+      instructions: 'Read each question carefully. Select the best answer. You cannot go back to previous questions.',
+      isActive: true,
+      accessCode: null,
+      created: new Date().toISOString()
+    }
+  ];
+
+  // -------------------- Registration Tracking --------------------
+  let allRegistrations = JSON.parse(localStorage.getItem('noscience_all_registrations')) || [];
+
+  // -------------------- User Results --------------------
+  let userResults = JSON.parse(localStorage.getItem('noscience_user_results')) || [];
+
+  // -------------------- Study Materials Data --------------------
+  let studyMaterials = JSON.parse(localStorage.getItem('noscience_materials')) || [
+    {
+      id: 1,
+      name: 'West Bengal GK Guide',
+      description: 'Complete guide to West Bengal General Knowledge',
+      fileUrl: '#',
+      fileType: 'pdf',
+      downloads: 124
+    },
+    {
+      id: 2,
+      name: 'Current Affairs 2024',
+      description: 'Monthly current affairs compilation',
+      fileUrl: '#',
+      fileType: 'pdf',
+      downloads: 89
+    }
+  ];
+
+  // -------------------- State --------------------
+  const state = {
+    view: 'landing',
+    student: null,
+    currentQIndex: 0,
+    answers: {},
+    reviewMarked: [],
+    timerId: null,
+    timeLeft: 45 * 60,
+    perSection: null,
+    currentTest: null,
+    testType: 'fixed',
+    adminTab: 'stats',
+    adminRegFilter: 'all',
+    accessCodeModal: null,
+    currentSectionIndex: 0, // New state for section tracking
+    testSections: [] // New state for test sections
+  };
+
+  // -------------------- Website Settings Management --------------------
+  function saveWebsiteSettings() {
+    localStorage.setItem('noscience_website_settings', JSON.stringify(websiteSettings));
+    document.getElementById('pageTitle').textContent = websiteSettings.title;
+    applyTextCustomization();
+  }
+
+  function updateWebsiteSettings(newSettings) {
+    websiteSettings = { ...websiteSettings, ...newSettings };
+    saveWebsiteSettings();
+  }
+
+  function applyTextCustomization() {
+    const customization = websiteSettings.textCustomization;
+   
+    if (state.view === 'landing' && customization.landing) {
+      document.body.style.color = customization.landing.color;
+      document.body.style.fontFamily = customization.landing.font;
+      document.body.style.fontSize = customization.landing.size;
+    }
+   
+    if (state.view === 'test' && customization.test) {
+      document.body.style.color = customization.test.color;
+      document.body.style.fontFamily = customization.test.font;
+      document.body.style.fontSize = customization.test.size;
+    }
+   
+    if (state.view === 'adminDash' && customization.admin) {
+      document.body.style.color = customization.admin.color;
+      document.body.style.fontFamily = customization.admin.font;
+      document.body.style.fontSize = customization.admin.size;
+    }
+  }
+
+  // -------------------- Notice Board Management --------------------
+  function saveNoticeBoard() {
+    localStorage.setItem('noscience_notice_board', JSON.stringify(noticeBoard));
+  }
+
+  function addNotice(notice) {
+    notice.id = Date.now();
+    notice.active = true;
+    noticeBoard.push(notice);
+    saveNoticeBoard();
+  }
+
+  function updateNotice(id, updates) {
+    const index = noticeBoard.findIndex(notice => notice.id === id);
+    if (index !== -1) {
+      noticeBoard[index] = { ...noticeBoard[index], ...updates };
+      saveNoticeBoard();
+    }
+  }
+
+  function deleteNotice(id) {
+    noticeBoard = noticeBoard.filter(notice => notice.id !== id);
+    saveNoticeBoard();
+  }
+
+  function toggleNoticeStatus(id) {
+    const index = noticeBoard.findIndex(notice => notice.id === id);
+    if (index !== -1) {
+      noticeBoard[index].active = !noticeBoard[index].active;
+      saveNoticeBoard();
+    }
+  }
+
+  // -------------------- Security Functions --------------------
+  function base64Decode(str) {
+    try {
+      return decodeURIComponent(atob(str).split('').map(function(c) {
+        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+      }).join(''));
+    } catch (e) {
+      console.error('Base64 decode error:', e);
+      return null;
+    }
+  }
+
+  function base64Encode(str) {
+    return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, function(match, p1) {
+      return String.fromCharCode('0x' + p1);
+    }));
+  }
+
+  function checkAdminCredentials(id, password) {
+    if (securityState.lockedUntil > Date.now()) {
+      const remainingTime = Math.ceil((securityState.lockedUntil - Date.now()) / 1000 / 60);
+      return { success: false, message: `Account temporarily locked. Try again in ${remainingTime} minutes.` };
+    }
+
+    const decodedId = base64Decode(SECURITY_CONFIG.adminCredentials.id);
+    const decodedPassword = base64Decode(SECURITY_CONFIG.adminCredentials.password);
+
+    if (id === decodedId && password === decodedPassword) {
+      securityState.loginAttempts = 0;
+      securityState.lockedUntil = 0;
+      securityState.lastAdminAccess = new Date().toISOString();
+      saveSecurityState();
+      return { success: true };
+    } else {
+      securityState.loginAttempts++;
+      if (securityState.loginAttempts >= SECURITY_CONFIG.maxLoginAttempts) {
+        securityState.lockedUntil = Date.now() + SECURITY_CONFIG.lockoutTime;
+        saveSecurityState();
+        return {
+          success: false,
+          message: `Too many failed attempts. Account locked for ${SECURITY_CONFIG.lockoutTime / 1000 / 60} minutes.`
+        };
+      }
+      saveSecurityState();
+      return {
+        success: false,
+        message: `Invalid credentials. ${SECURITY_CONFIG.maxLoginAttempts - securityState.loginAttempts} attempts remaining.`
+      };
+    }
+  }
+
+  function saveSecurityState() {
+    localStorage.setItem('noscience_security_state', JSON.stringify(securityState));
+  }
+
+  function saveAdminCredentials() {
+    localStorage.setItem('noscience_admin_credentials', JSON.stringify(adminCredentials));
+    SECURITY_CONFIG.adminCredentials = adminCredentials;
+  }
+
+  function updateAdminCredentials(newId, newPassword) {
+    adminCredentials.id = base64Encode(newId);
+    adminCredentials.password = base64Encode(newPassword);
+    saveAdminCredentials();
+    return true;
+  }
+
+  // -------------------- Initialize Visitor Count --------------------
+  function initializeVisitorCount() {
+    const visitorId = localStorage.getItem('noscience_visitor_id');
+    if (!visitorId) {
+      globalStats.totalVisitors++;
+      localStorage.setItem('noscience_global_stats', JSON.stringify(globalStats));
+
+      const newVisitorId = 'visitor_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+      localStorage.setItem('noscience_visitor_id', newVisitorId);
+    }
+
+    localStorage.setItem('noscience_global_stats', JSON.stringify(globalStats));
+  }
+
+  // -------------------- WhatsApp Settings Management --------------------
+  function saveWhatsAppSettings() {
+    localStorage.setItem('noscience_whatsapp_settings', JSON.stringify(whatsappSettings));
+  }
+
+  function updateWhatsAppSettings(newSettings) {
+    whatsappSettings = { ...whatsappSettings, ...newSettings };
+    saveWhatsAppSettings();
+  }
+
+  // -------------------- Track Registration --------------------
+  function trackRegistration(student, testType, testName) {
+    const registration = {
+      id: Date.now(),
+      name: student.name,
+      mobile: student.mobile,
+      district: student.district,
+      testType: testType,
+      testName: testName,
+      timestamp: new Date().toISOString(),
+      ip: 'N/A'
+    };
+
+    allRegistrations.push(registration);
+    globalStats.totalRegistrations++;
+
+    localStorage.setItem('noscience_all_registrations', JSON.stringify(allRegistrations));
+    localStorage.setItem('noscience_global_stats', JSON.stringify(globalStats));
+  }
+
+  // -------------------- Track Test Completion --------------------
+  function trackTestCompletion(student, testType, testName, score, total) {
+    globalStats.totalTestsTaken++;
+    localStorage.setItem('noscience_global_stats', JSON.stringify(globalStats));
+  }
+
+  // -------------------- Track Material Download --------------------
+  function trackMaterialDownload(materialId) {
+    const material = studyMaterials.find(m => m.id === materialId);
+    if (material) {
+      material.downloads = (material.downloads || 0) + 1;
+      saveMaterials();
+    }
+  }
+
+  // -------------------- Utilities --------------------
+  function $(id){ return document.getElementById(id); }
+  function clampIndex(){
+    const currentQuestions = getCurrentQuestions();
+    if(!currentQuestions || currentQuestions.length === 0){ state.currentQIndex = -1; return; }
+    if(state.currentQIndex < 0) state.currentQIndex = 0;
+    if(state.currentQIndex >= currentQuestions.length) state.currentQIndex = currentQuestions.length - 1;
+  }
+ 
+  function getCurrentQuestions() {
+    if (state.testType === 'mock' && state.currentTest) {
+      return state.currentTest.questions;
+    } else if (state.testSections.length > 0) {
+      return state.testSections[state.currentSectionIndex]?.questions || [];
+    } else {
+      return questions;
+    }
+  }
+ 
+  function escapeHtml(s){
+    return String(s)
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+      .replace(/\"/g,'&quot;').replace(/'/g,'&#39;');
+  }
+  function formatTime(sec){
+    if(sec < 0) sec = 0;
+    const m = Math.floor(sec/60), s = sec % 60;
+    return `${m.toString().padStart(2,'0')}:${s.toString().padStart(2,'0')}`;
+  }
+
+  // -------------------- Access Code Functions --------------------
+  function showAccessCodeModal(test) {
+    state.accessCodeModal = test;
+    render();
+  }
+
+  function hideAccessCodeModal() {
+    state.accessCodeModal = null;
+    render();
+  }
+
+  function validateAccessCode(enteredCode) {
+    if (!state.accessCodeModal) return false;
+   
+    const test = state.accessCodeModal;
+    if (!test.accessCode) return true;
+   
+    return enteredCode === test.accessCode;
+  }
+
+  function proceedWithTest() {
+    const enteredCode = document.getElementById('accessCodeInput')?.value || '';
+   
+    if (!validateAccessCode(enteredCode)) {
+      alert('Invalid access code. Please try again.');
+      return;
+    }
+   
+    const test = state.accessCodeModal;
+    state.view = 'student';
+    state.currentTest = test;
+    state.testType = 'mock';
+    state.accessCodeModal = null;
+    render();
+  }
+
+  // -------------------- Enhanced MCQ Text Parser (Fixed for 100 questions) --------------------
+  function parseMCQText(text) {
+    const questions = [];
+    const lines = text.split('\n').filter(line => line.trim());
+   
+    let currentQuestion = null;
+    let currentOptions = [];
+    let currentAnswer = null;
+    let currentExplanation = '';
+    let questionNumber = 1;
+   
+    for (let i = 0; i < lines.length; i++) {
+      const line = lines[i].trim();
+     
+      if (!line) continue;
+     
+      // Detect question (Q1, 1., Question 1, etc.)
+      const questionMatch = line.match(/^(?:Q|Question)?\s*(\d+)[\.\)]\s*(.+)/i) || 
+                           line.match(/^(\d+)[\.\)]\s*(.+)/i) ||
+                           (!currentQuestion && line.length > 10 && !line.match(/^[A-D][\.\)]/i) &&
+                            !line.match(/^(Answer|Correct|Key)/i));
+     
+      if (questionMatch) {
+        // Save previous question if exists
+        if (currentQuestion && currentOptions.length >= 2) {
+          questions.push({
+            id: questions.length + 1,
+            section: 'Section 1',
+            q: currentQuestion,
+            options: [...currentOptions],
+            answer: currentAnswer || currentOptions[0],
+            explanation: currentExplanation || 'This question was imported from text input.'
+          });
+         
+          // Stop at 100 questions
+          if (questions.length >= 100) break;
+        }
+       
+        // Start new question
+        if (typeof questionMatch === 'object' && questionMatch[2]) {
+          currentQuestion = questionMatch[2].trim();
+        } else {
+          currentQuestion = line.replace(/^(?:Q|Question)?\s*\d+[\.\)]\s*/i, '').trim();
+        }
+        currentOptions = [];
+        currentAnswer = null;
+        currentExplanation = '';
+        questionNumber++;
+      }
+      // Detect options (A., B., a), b), etc.)
+      else if (line.match(/^[A-D][\.\)]\s+/i)) {
+        const optionText = line.replace(/^[A-D][\.\)]\s+/i, '').trim();
+        if (optionText && currentOptions.length < 4) {
+          currentOptions.push(optionText);
+        }
+      }
+      // Detect options without proper formatting but with A) B) etc.
+      else if (line.match(/^[A-D]\)\s+/i)) {
+        const optionText = line.replace(/^[A-D]\)\s+/i, '').trim();
+        if (optionText && currentOptions.length < 4) {
+          currentOptions.push(optionText);
+        }
+      }
+      // Detect answer (Answer:, Correct:, Key:, etc.)
+      else if (line.match(/^(Answer|Correct|Key):?\s*[A-D]/i)) {
+        const match = line.match(/[A-D]/i);
+        if (match && currentOptions.length > 0) {
+          const answerIndex = match[0].toUpperCase().charCodeAt(0) - 65;
+          if (currentOptions[answerIndex]) {
+            currentAnswer = currentOptions[answerIndex];
+          }
+        }
+      }
+      // Detect explanation
+      else if (line.match(/^(Explanation|Note|Hint):/i)) {
+        currentExplanation = line.replace(/^(Explanation|Note|Hint):\s*/i, '').trim();
+      }
+      // If we're in a question and line doesn't match patterns, add to question text or options
+      else if (currentQuestion && line) {
+        // Check if this might be an option without proper formatting
+        if (line.length < 100 && currentOptions.length < 4 &&
+            (line.match(/^[A-D]\.?/) || currentOptions.length > 0)) {
+          const optionText = line.replace(/^[A-D]\.?\s*/i, '').trim();
+          if (optionText) {
+            currentOptions.push(optionText);
+          }
+        } else if (currentOptions.length >= 4) {
+          currentExplanation = line;
+        } else {
+          currentQuestion += ' ' + line;
+        }
+      }
+    }
+   
+    // Add the last question
+    if (currentQuestion && currentOptions.length >= 2 && questions.length < 100) {
+      questions.push({
+        id: questions.length + 1,
+        section: 'Section 1',
+        q: currentQuestion,
+        options: [...currentOptions],
+        answer: currentAnswer || currentOptions[0],
+        explanation: currentExplanation || 'This question was imported from text input.'
+      });
+    }
+   
+    // Final fallback - ensure we have at least 1 question
+    if (questions.length === 0) {
+      questions.push({
+        id: 1,
+        section: 'Imported Questions',
+        q: 'Sample question from text input?',
+        options: ['Option A', 'Option B', 'Option C', 'Option D'],
+        answer: 'Option A',
+        explanation: 'This question was generated from the text input.'
+      });
+    }
+   
+    return questions;
+  }
+
+  // -------------------- Mock Test Management --------------------
+  function saveMockTests() {
+    localStorage.setItem('noscience_mock_tests', JSON.stringify(mockTests));
+  }
+
+  function addMockTest(test) {
+    test.id = Date.now();
+    test.isActive = true;
+    test.created = new Date().toISOString();
+    mockTests.push(test);
+    saveMockTests();
+  }
+
+  function deleteMockTest(id) {
+    mockTests = mockTests.filter(test => test.id !== id);
+    saveMockTests();
+  }
+
+  function toggleMockTestStatus(id) {
+    const index = mockTests.findIndex(test => test.id === id);
+    if (index !== -1) {
+      mockTests[index].isActive = !mockTests[index].isActive;
+      saveMockTests();
+    }
+  }
+
+  // -------------------- Study Materials Management --------------------
+  function saveMaterials() {
+    localStorage.setItem('noscience_materials', JSON.stringify(studyMaterials));
+  }
+
+  function addMaterial(material) {
+    material.id = Date.now();
+    material.downloads = 0;
+    studyMaterials.push(material);
+    saveMaterials();
+  }
+
+  function deleteMaterial(id) {
+    studyMaterials = studyMaterials.filter(material => material.id !== id);
+    saveMaterials();
+  }
+
+  // -------------------- User Results Management --------------------
+  function deleteUserResult(id) {
+    userResults = userResults.filter(result => result.id !== id);
+    localStorage.setItem('noscience_user_results', JSON.stringify(userResults));
+  }
+
+  function clearAllUserResults() {
+    userResults = [];
+    localStorage.setItem('noscience_user_results', JSON.stringify(userResults));
+  }
+
+  // -------------------- Registration Management --------------------
+  function getRegistrationsByTest() {
+    const registrationsByTest = {};
+
+    allRegistrations.forEach(reg => {
+      const testKey = `${reg.testType}-${reg.testName}`;
+      if (!registrationsByTest[testKey]) {
+        registrationsByTest[testKey] = [];
+      }
+      registrationsByTest[testKey].push(reg);
+    });
+
+    return registrationsByTest;
+  }
+
+  function getFilteredRegistrations() {
+    if (state.adminRegFilter === 'all') {
+      return allRegistrations;
+    } else {
+      const registrationsByTest = getRegistrationsByTest();
+      return registrationsByTest[state.adminRegFilter] || [];
+    }
+  }
+
+  function clearRegistrationsForTest(testFilter) {
+    if (testFilter === 'all') {
+      allRegistrations = [];
+    } else {
+      allRegistrations = allRegistrations.filter(reg => {
+        const testKey = `${reg.testType}-${reg.testName}`;
+        return testKey !== testFilter;
+      });
+    }
+    localStorage.setItem('noscience_all_registrations', JSON.stringify(allRegistrations));
+  }
+
+  // -------------------- Test Section Management --------------------
+  function initializeTestSections() {
+    if (state.testType === 'mock' && state.currentTest) {
+      // Group questions by section for mock tests
+      const sectionsMap = {};
+      state.currentTest.questions.forEach(q => {
+        if (!sectionsMap[q.section]) {
+          sectionsMap[q.section] = [];
+        }
+        sectionsMap[q.section].push(q);
+      });
+     
+      state.testSections = Object.keys(sectionsMap).map(sectionName => ({
+        name: sectionName,
+        questions: sectionsMap[sectionName]
+      }));
+    } else {
+      // For fixed test, use the existing sections
+      const sectionsMap = {};
+      questions.forEach(q => {
+        if (!sectionsMap[q.section]) {
+          sectionsMap[q.section] = [];
+        }
+        sectionsMap[q.section].push(q);
+      });
+     
+      state.testSections = Object.keys(sectionsMap).map(sectionName => ({
+        name: sectionName,
+        questions: sectionsMap[sectionName]
+      }));
+    }
+   
+    state.currentSectionIndex = 0;
+    state.currentQIndex = 0;
+  }
+
+  // -------------------- Renderers --------------------
+  function render(){
+    const root = $('root');
+    root.innerHTML = '';
+
+    applyTextCustomization();
+
+    if(state.view === 'test') {
+      root.className = 'test-page';
+    } else if(state.view === 'result') {
+      root.className = 'result-page';
+    } else {
+      root.className = '';
+    }
+
+    if(state.view === 'landing'){ return renderLanding(root); }
+    if(state.view === 'student'){ return renderStudent(root); }
+    if(state.view === 'adminLogin'){ return renderAdminLogin(root); }
+    if(state.view === 'test'){ return renderTest(root); }
+    if(state.view === 'result'){ return renderResult(root); }
+    if(state.view === 'adminDash'){ return renderAdminDash(root); }
+    if(state.view === 'mockTest'){ return renderMockTest(root); }
+   
+    renderLanding(root);
+  }
+
+  // Professional Educational Website Landing with Blue Woven Fabric Texture
+  function renderLanding(root){
+    const activeMockTests = mockTests.filter(test => test.isActive);
+    const activeNotices = noticeBoard.filter(notice => notice.active);
+
+    let landingClass = 'professional-landing';
+    if (websiteSettings.landingPage.template === 'modern') {
+      landingClass = 'modern-landing';
+    } else if (websiteSettings.landingPage.template === 'gradient') {
+      landingClass = 'gradient-landing';
+    } else if (websiteSettings.landingPage.template === 'dark') {
+      landingClass = 'dark-landing';
+    }
+   
+    landingClass += ' texture-' + (websiteSettings.landingPage.texture || 'woven');
+
+    const el = document.createElement('div');
+    el.className = landingClass;
+    el.innerHTML = `
+<div class="professional-header">
+<div class="logo-section">
+<div class="logo-container">
+<div class="energy-core">
+<div class="core-inner"></div>
+<div class="energy-arc"></div>
+<div class="energy-arc"></div>
+<div class="energy-arc"></div>
+<div class="logo-text">noScience</div>
+</div>
+</div>
+<div>
+<div class="institute-name">WBSSC Group C & D Preparation Portal</div>
+<div class="institute-tagline">Comprehensive preparation platform for West Bengal SSC examinations</div>
+</div>
+</div>
+<div class="visitor-counter">
+👥 ${globalStats.totalVisitors.toLocaleString()} Visitors
+</div>
+</div>
+
+<div class="main-content">
+<div class="welcome-section">
+<h1 class="welcome-title">${websiteSettings.welcomeTitle}</h1>
+<p class="welcome-text">
+            ${websiteSettings.welcomeText}
+</p>
+
+<div class="features-grid">
+<div class="feature-card">
+<div class="feature-icon">📝</div>
+<div class="feature-title">Mock Tests</div>
+<div class="feature-desc">Section-wise and full-length practice tests</div>
+</div>
+<div class="feature-card">
+<div class="feature-icon">📚</div>
+<div class="feature-title">Study Materials</div>
+<div class="feature-desc">Comprehensive study resources and guides</div>
+</div>
+<div class="feature-card">
+<div class="feature-icon">📊</div>
+<div class="feature-title">Performance Analytics</div>
+<div class="feature-desc">Detailed analysis of your test performance</div>
+</div>
+<div class="feature-card">
+<div class="feature-icon">⏱️</div>
+<div class="feature-title">Timed Practice</div>
+<div class="feature-desc">Real exam-like timing and environment</div>
+</div>
+</div>
+</div>
+
+<div class="notice-board">
+<div class="notice-header">
+<div class="notice-title">Latest Updates</div>
+<div class="notice-badge">New</div>
+</div>
+<div class="notice-list">
+            ${activeNotices.map(notice => `
+<div class="notice-item">
+<div class="notice-date">${notice.date}</div>
+<div class="notice-text">${notice.text}</div>
+<div class="notice-type">${notice.type}</div>
+</div>
+            `).join('')}
+            ${activeNotices.length === 0 ? `
+<div class="notice-item">
+<div class="notice-text">No active notices at the moment.</div>
+</div>
+            ` : ''}
+</div>
+</div>
+</div>
+
+      ${activeMockTests.length > 0 ? `
+<div class="mock-test-section">
+<div class="mock-test-header">
+<div class="mock-test-title">Available Mock Tests</div>
+</div>
+<div class="mock-test-grid">
+            ${activeMockTests.map(test => `
+<div class="mock-test-card">
+<div class="mock-test-icon">📝</div>
+<div class="mock-test-name">${test.name}</div>
+<div class="mock-test-desc">${test.description}</div>
+<div class="mock-test-desc">${test.questions.length} questions • ${test.timeLimit} minutes</div>
+<div class="mock-test-desc">Passing: ${test.passingMarks}%</div>
+                ${test.accessCode ? '<div class="mock-test-desc" style="color: var(--accent);">🔒 Access Code Required</div>' : ''}
+<button class="start-mock-btn" data-id="${test.id}">Start Test</button>
+</div>
+            `).join('')}
+</div>
+</div>
+      ` : ''}
+
+<div class="materials-section">
+<div class="materials-header">
+<div class="materials-title">Study Materials</div>
+</div>
+<div class="materials-grid">
+          ${studyMaterials.map(material => `
+<div class="material-card">
+<div class="material-icon">📄</div>
+<div class="material-name">${material.name}</div>
+<div class="material-desc">${material.description}</div>
+<div class="download-counter">📥 ${material.downloads || 0} downloads</div>
+<button class="download-btn" data-id="${material.id}">Download</button>
+</div>
+          `).join('')}
+</div>
+</div>
+
+      ${whatsappSettings.enabled ? `
+<div class="whatsapp-section">
+<div class="whatsapp-header">
+<div class="whatsapp-logo">💬</div>
+<div class="whatsapp-title">Contact Us on WhatsApp</div>
+</div>
+<div class="whatsapp-content">
+<div class="whatsapp-message">${whatsappSettings.message}</div>
+<div class="whatsapp-number">${whatsappSettings.number}</div>
+<a href="https://wa.me/${whatsappSettings.number}" target="_blank" class="whatsapp-button">
+<span>💬</span>
+              Chat on WhatsApp
+</a>
+</div>
+</div>
+      ` : ''}
+
+<div class="action-buttons">
+<button id="startBtn" class="action-btn primary">Start Fixed Test</button>
+<button id="mockTestBtn" class="action-btn secondary">Mock Test Series</button>
+<button id="adminBtn" class="action-btn admin">Admin Login</button>
+</div>
+
+<div class="visitor-counter-bottom">
+👥 Total Visitors: ${globalStats.totalVisitors.toLocaleString()} |
+📝 Total Registrations: ${globalStats.totalRegistrations.toLocaleString()} |
+📊 Total Tests Taken: ${globalStats.totalTestsTaken.toLocaleString()}
+</div>
+
+<footer class="small" style="margin-top:30px;color:rgba(255,255,255,0.7)">
+&copy; 2024 WBSSC Preparation Portal. All rights reserved. Created by Irfan Ansari
+</footer>
+    `;
+    root.appendChild(el);
+
+    // Add event listeners for download buttons
+    el.querySelectorAll('.download-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const materialId = parseInt(e.target.dataset.id);
+        const material = studyMaterials.find(m => m.id === materialId);
+        if (material) {
+          trackMaterialDownload(materialId);
+          alert(`Downloading: ${material.name}\n\nNote: This is a demo. In a real application, this would download the actual file.`);
+          render();
+        }
+      });
+    });
+
+    // Add event listeners for mock test buttons
+    el.querySelectorAll('.start-mock-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const testId = parseInt(e.target.dataset.id);
+        const test = mockTests.find(t => t.id === testId);
+        if (test) {
+          if (test.accessCode) {
+            showAccessCodeModal(test);
+          } else {
+            state.view = 'student';
+            state.currentTest = test;
+            state.testType = 'mock';
+            render();
+          }
+        }
+      });
+    });
+
+    $('startBtn').addEventListener('click', ()=> {
+      state.view = 'student';
+      state.currentTest = null;
+      state.testType = 'fixed';
+      render();
+    });
+    $('mockTestBtn').addEventListener('click', ()=> {
+      state.view = 'mockTest';
+      render();
+    });
+    $('adminBtn').addEventListener('click', ()=> {
+      state.view = 'adminLogin';
+      render();
+    });
+
+    // Render access code modal if needed
+    if (state.accessCodeModal) {
+      renderAccessCodeModal(root);
+    }
+  }
+
+  // Access Code Modal
+  function renderAccessCodeModal(root) {
+    const modal = document.createElement('div');
+    modal.className = 'modal-overlay';
+    modal.innerHTML = `
+<div class="modal-content">
+<div class="modal-header">
+<div class="modal-title">Enter Access Code</div>
+<div class="small">Please enter the 5-digit access code to continue</div>
+</div>
+<div class="modal-body">
+<input type="text" id="accessCodeInput" class="access-code-input" placeholder="Enter 5-digit code" maxlength="5">
+<div class="small" style="margin-top: 10px; text-align: center;">
+            This test requires an access code. Contact administrator if you don't have it.
+</div>
+</div>
+<div class="modal-footer">
+<button id="cancelAccessCode" class="btn btn-ghost">Cancel</button>
+<button id="submitAccessCode" class="btn btn-green">Continue</button>
+</div>
+</div>
+    `;
+    root.appendChild(modal);
+
+    $('cancelAccessCode').addEventListener('click', hideAccessCodeModal);
+    $('submitAccessCode').addEventListener('click', proceedWithTest);
+   
+    $('accessCodeInput').addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        proceedWithTest();
+      }
+    });
+   
+    setTimeout(() => {
+      $('accessCodeInput').focus();
+    }, 100);
+  }
+
+  // Mock Test Series Page
+  function renderMockTest(root) {
+    const activeMockTests = mockTests.filter(test => test.isActive);
+
+    const card = document.createElement('div');
+    card.className = 'app-wrap';
+    card.innerHTML = `
+<div class="card">
+<h2>Mock Test Series</h2>
+<div class="small" style="margin-bottom: 16px;">Practice with our curated mock tests</div>
+
+        ${activeMockTests.length > 0 ? `
+<div class="mock-test-grid">
+            ${activeMockTests.map(test => `
+<div class="mock-test-card">
+<div class="mock-test-icon">📝</div>
+<div class="mock-test-name">${test.name}</div>
+<div class="mock-test-desc">${test.description}</div>
+<div class="mock-test-desc">${test.questions.length} questions • ${test.timeLimit} minutes</div>
+<div class="mock-test-desc">Passing: ${test.passingMarks}%</div>
+                ${test.accessCode ? '<div class="mock-test-desc" style="color: var(--accent);">🔒 Access Code Required</div>' : ''}
+<button class="start-mock-btn" data-id="${test.id}">Start Test</button>
+</div>
+            `).join('')}
+</div>
+        ` : `
+<div class="result-box" style="text-align: center;">
+<h3>No Mock Tests Available</h3>
+<p>Check back later for new mock tests or contact administrator.</p>
+</div>
+        `}
+
+<div class="controls" style="margin-top:20px">
+<button id="backHomeFromMock" class="btn btn-ghost">Back to Home</button>
+</div>
+</div>
+    `;
+    root.appendChild(card);
+
+    // Add event listeners for mock test buttons
+    card.querySelectorAll('.start-mock-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const testId = parseInt(e.target.dataset.id);
+        const test = mockTests.find(t => t.id === testId);
+        if (test) {
+          if (test.accessCode) {
+            showAccessCodeModal(test);
+          } else {
+            state.view = 'student';
+            state.currentTest = test;
+            state.testType = 'mock';
+            render();
+          }
+        }
+      });
+    });
+
+    $('backHomeFromMock').addEventListener('click', ()=> {
+      state.view = 'landing';
+      render();
+    });
+
+    // Render access code modal if needed
+    if (state.accessCodeModal) {
+      renderAccessCodeModal(root);
+    }
+  }
+
+  // Student registration / login
+  function renderStudent(root){
+    const testName = state.testType === 'mock' && state.currentTest ? state.currentTest.name : 'WBSSC Group C & D (Section Wise Mock Test 1)';
+    const testDesc = state.testType === 'mock' && state.currentTest ? state.currentTest.description : 'WB Static GK';
+    const testInstructions = state.testType === 'mock' && state.currentTest ? state.currentTest.instructions : 'Read each question carefully. Select the best answer. You cannot go back to previous questions.';
+
+    const card = document.createElement('div'); card.className='app-wrap';
+    card.innerHTML = `
+<div class="card">
+<h2>${testName}</h2>
+<div class="small" style="margin-bottom: 16px;">${testDesc}</div>
+        ${state.testType === 'mock' && state.currentTest ? `
+<div class="small" style="margin-bottom: 16px; color: var(--accent);">
+<strong>Instructions:</strong> ${testInstructions}
+</div>
+        ` : ''}
+<div style="max-width:720px;margin-top:12px;">
+<label class="small">Full name</label>
+<input id="stu_name" placeholder="Your full name"/>
+<label class="small">Mobile (10 digits)</label>
+<input id="stu_mobile" placeholder="10-digit mobile number"/>
+<label class="small">District</label>
+<select id="stu_district">
+<option value="">Select district</option>
+<option>Kolkata</option><option>Howrah</option><option>Nadia</option><option>Darjeeling</option>
+<option>Hooghly</option><option>Murshidabad</option><option>Birbhum</option><option>Bankura</option>
+<option>Purulia</option><option>Paschim Medinipur</option><option>Purba Medinipur</option><option>Jalpaiguri</option>
+<option>Malda</option><option>Jhargram</option><option>North 24 Parganas</option><option>South 24 Parganas</option>
+<option>Alipurduar</option><option>Cooch Behar</option><option>Dakshin Dinajpur</option><option>Uttar Dinajpur</option>
+</select>
+<div class="controls" style="margin-top:14px">
+<button id="stuStart" class="btn btn-green">Start Test</button>
+<button id="backHome" class="btn btn-ghost">Back to Home</button>
+</div>
+</div>
+</div>
+    `;
+    root.appendChild(card);
+
+    $('backHome').addEventListener('click', ()=> { state.view='landing'; render(); });
+    $('stuStart').addEventListener('click', ()=> {
+      const name = $('stu_name').value.trim();
+      const mobile = $('stu_mobile').value.trim();
+      const district = $('stu_district').value;
+      if(!name || !mobile || !district){ alert('Please fill all fields'); return; }
+      if(!/^[0-9]{10}$/.test(mobile)){ alert('Enter a valid 10-digit mobile number'); return; }
+     
+      // Removed phone number limit check
+      state.student = { name, mobile, district };
+      state.currentQIndex = 0;
+      state.answers = {};
+      state.reviewMarked = [];
+
+      // Set time limit based on test type
+      if (state.testType === 'mock' && state.currentTest) {
+        state.timeLeft = state.currentTest.timeLimit * 60;
+      } else {
+        state.timeLeft = 45 * 60;
+      }
+
+      // Initialize test sections
+      initializeTestSections();
+
+      // Track registration
+      trackRegistration(
+        state.student,
+        state.testType,
+        state.testType === 'mock' && state.currentTest ? state.currentTest.name : 'Fixed Test'
+      );
+
+      state.view = 'test';
+      startTimer();
+      render();
+    });
+  }
+
+  // Admin login
+  function renderAdminLogin(root){
+    const card = document.createElement('div'); card.className='app-wrap';
+    card.innerHTML = `
+<div class="card">
+<h2>Admin Login</h2>
+        ${securityState.lockedUntil > Date.now() ? `
+<div class="security-notice">
+<strong>Account Temporarily Locked</strong><br>
+            Too many failed login attempts. Please try again after
+            ${Math.ceil((securityState.lockedUntil - Date.now()) / 1000 / 60)} minutes.
+</div>
+        ` : ''}
+<div style="max-width:420px">
+<input id="admin_id" placeholder="Admin ID"/>
+<input id="admin_pass" placeholder="Password" type="password" style="margin-top:8px"/>
+<div class="controls" style="margin-top:12px">
+<button id="adminLoginBtn" class="btn btn-green" ${securityState.lockedUntil > Date.now() ? 'disabled' : ''}>Login</button>
+<button id="adminBack" class="btn btn-ghost">Back to Home</button>
+</div>
+<div class="small" style="margin-top:10px">Contact administrator for credentials</div>
+          ${securityState.loginAttempts > 0 ? `
+<div class="small" style="color: var(--danger); margin-top: 8px;">
+              ${SECURITY_CONFIG.maxLoginAttempts - securityState.loginAttempts} login attempts remaining
+</div>
+          ` : ''}
+</div>
+</div>
+    `;
+    root.appendChild(card);
+    $('adminBack').addEventListener('click', ()=> { state.view='landing'; render(); });
+    $('adminLoginBtn').addEventListener('click', ()=> {
+      if (securityState.lockedUntil > Date.now()) {
+        alert(`Account temporarily locked. Try again in ${Math.ceil((securityState.lockedUntil - Date.now()) / 1000 / 60)} minutes.`);
+        return;
+      }
+
+      const id = $('admin_id').value.trim();
+      const pass = $('admin_pass').value.trim();
+      const result = checkAdminCredentials(id, pass);
+
+      if (result.success) {
+        state.view = 'adminDash';
+        state.adminTab = 'stats';
+        render();
+      } else {
+        alert(result.message);
+        render();
+      }
+    });
+  }
+
+  // Test view with sections
+  function renderTest(root){
+    clampIndex();
+    const currentQuestions = getCurrentQuestions();
+
+    if(currentQuestions.length === 0){ root.innerHTML = '<div class="card"><h3>No questions available</h3></div>'; return; }
+    const q = currentQuestions[state.currentQIndex];
+    if(!q){ root.innerHTML = '<div class="card"><h3>Question not found (index out of range). Refresh the page.</h3></div>'; return; }
+
+    const testName = state.testType === 'mock' && state.currentTest ? state.currentTest.name : 'WBSSC Group C & D (Section Wise Mock Test 1)';
+    const testDesc = state.testType === 'mock' && state.currentTest ? state.currentTest.description : 'WB Static GK';
+
+    const card = document.createElement('div'); card.className='app-wrap';
+
+    // build options with A,B,C,D labels and right-aligned radio buttons
+    let optionsHtml = '';
+    q.options.forEach((opt, index) => {
+      const checked = (state.answers[q.id] === opt) ? 'checked' : '';
+      const optionLabel = String.fromCharCode(65 + index);
+      optionsHtml += `
+<label class="option">
+<div class="option-content">
+<span class="option-label">${optionLabel}</span>
+<span>${escapeHtml(opt)}</span>
+</div>
+<div class="option-radio">
+<input type="radio" name="q${q.id}" value="${escapeHtml(opt)}" ${checked}/>
+</div>
+</label>
+      `;
+    });
+
+    // Build section tabs if there are multiple sections
+    let sectionTabsHtml = '';
+    if (state.testSections.length > 1) {
+      sectionTabsHtml = `
+<div class="section-tabs">
+        ${state.testSections.map((section, index) => `
+<div class="section-tab ${index === state.currentSectionIndex ? 'active' : ''}" data-section="${index}">
+${section.name} (${section.questions.length})
+</div>
+        `).join('')}
+</div>
+      `;
+    }
+
+    card.innerHTML = `
+<div class="card">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+<div>
+<h2>${testName}</h2>
+<div class="small">${testDesc}</div>
+<div class="small" style="margin-top:8px">Student: <strong>${escapeHtml(state.student?.name || '')}</strong> • ${escapeHtml(state.student?.district || '')}</div>
+<div class="small">Marked for review: ${state.reviewMarked.length} • Answered: ${Object.keys(state.answers).length} / ${getCurrentQuestions().length}</div>
+</div>
+<div style="text-align:right">
+<div class="timer" id="timer">${formatTime(state.timeLeft)}</div>
+<div class="small">Time remaining</div>
+</div>
+</div>
+
+${sectionTabsHtml}
+
+<div class="section-header">${state.testSections[state.currentSectionIndex]?.name || 'Questions'} — Question ${state.currentQIndex + 1} of ${currentQuestions.length}</div>
+<div class="question-box">
+<div><strong>Q${state.currentQIndex + 1}.</strong> ${escapeHtml(q.q)}</div>
+<div style="margin-top:10px">${optionsHtml}</div>
+</div>
+
+<div class="controls" style="margin-top:12px">
+<button id="saveNext" class="btn btn-green">Save & Next</button>
+<button id="nextBtn" class="btn btn-green">Next</button>
+<button id="markBtn" class="btn btn-mark">Mark for Review</button>
+<button id="clearBtn" class="btn btn-clear">Clear Selection</button>
+<button id="submitBtn" class="btn btn-red">Submit</button>
+<button id="quitBtn" class="btn btn-black">Quit</button>
+</div>
+
+<div style="margin-top:12px" class="small">Navigate through questions using the question numbers below.</div>
+</div>
+    `;
+    root.appendChild(card);
+
+    // Event listeners for section tabs
+    if (state.testSections.length > 1) {
+      card.querySelectorAll('.section-tab').forEach(tab => {
+        tab.addEventListener('click', (e) => {
+          const sectionIndex = parseInt(e.target.dataset.section);
+          state.currentSectionIndex = sectionIndex;
+          state.currentQIndex = 0;
+          render();
+        });
+      });
+    }
+
+    // Event listeners
+    function readSelectedAndSave(){
+      const sel = card.querySelector(`input[name=q${q.id}]:checked`);
+      if(sel) state.answers[q.id] = sel.value;
+    }
+    $('saveNext')?.addEventListener('click', ()=> { readSelectedAndSave(); goNext(); });
+    $('nextBtn')?.addEventListener('click', ()=> { readSelectedAndSave(); goNext(); });
+    $('markBtn')?.addEventListener('click', ()=> {
+      readSelectedAndSave();
+      if(!state.reviewMarked.includes(q.id)) {
+        state.reviewMarked.push(q.id);
+      }
+      goNext();
+    });
+    $('clearBtn')?.addEventListener('click', ()=> {
+      delete state.answers[q.id];
+      const radios = card.querySelectorAll(`input[name=q${q.id}]`);
+      radios.forEach(radio => radio.checked = false);
+      render();
+    });
+    $('submitBtn')?.addEventListener('click', ()=> { preSubmitAlert(); });
+    $('quitBtn')?.addEventListener('click', ()=> { if(confirm('Quit the test and return to home? Progress will be lost.')) { stopTimer(); state.view = 'landing'; render(); } });
+
+    // quick jump panel of question indexes
+    const pillRow = document.createElement('div');
+    pillRow.className = 'question-indexes';
+    currentQuestions.forEach((sq, i) => {
+      const pill = document.createElement('div');
+      pill.className = 'q-pill';
+      if(state.answers[sq.id]) pill.classList.add('answered');
+      if(state.reviewMarked.includes(sq.id)) pill.classList.add('marked');
+      pill.textContent = `${i+1}`;
+      pill.title = `Go to Q${i+1}`;
+      pill.addEventListener('click', () => {
+        state.currentQIndex = i;
+        render();
+      });
+      pillRow.appendChild(pill);
+    });
+    card.appendChild(pillRow);
+  }
+
+  function goNext(){
+    const currentQuestions = getCurrentQuestions();
+    if(state.currentQIndex < currentQuestions.length - 1) state.currentQIndex++;
+    render();
+  }
+
+  // pre-submit confirmation alert
+  function preSubmitAlert(){
+    if(!confirm('You are about to submit the test. This will end the test and show your result. Do you want to continue?')) return;
+    submitTest();
+  }
+
+  function submitTest(){
+    stopTimer();
+    const currentQuestions = getCurrentQuestions();
+
+    // grade per section
+    const per = {};
+    currentQuestions.forEach(q => {
+      if(!per[q.section]) per[q.section] = { total:0, correct:0, wrong:0 };
+      per[q.section].total++;
+      const chosen = state.answers[q.id];
+      if(chosen === q.answer) per[q.section].correct++;
+      else per[q.section].wrong++;
+    });
+    state.perSection = per;
+
+    // Save user result to localStorage
+    const overallCorrect = Object.values(per).reduce((sum, section) => sum + section.correct, 0);
+    const percentage = ((overallCorrect / currentQuestions.length) * 100).toFixed(2);
+    const passed = state.testType === 'mock' && state.currentTest ?
+      (percentage >= state.currentTest.passingMarks) :
+      (percentage >= 60);
+
+    const userResult = {
+      id: Date.now(),
+      name: state.student.name,
+      mobile: state.student.mobile,
+      district: state.student.district,
+      score: overallCorrect,
+      total: currentQuestions.length,
+      percentage: percentage,
+      passed: passed,
+      perSection: per,
+      testType: state.testType,
+      testName: state.testType === 'mock' && state.currentTest ? state.currentTest.name : 'Fixed Test',
+      timestamp: new Date().toISOString()
+    };
+
+    userResults.push(userResult);
+
+    localStorage.setItem('noscience_user_results', JSON.stringify(userResults));
+
+    // Track test completion
+    trackTestCompletion(
+      state.student,
+      state.testType,
+      state.testType === 'mock' && state.currentTest ? state.currentTest.name : 'Fixed Test',
+      overallCorrect,
+      currentQuestions.length
+    );
+
+    state.view = 'result';
+    render();
+  }
+
+  // Result + analytics + review with explanations
+  function renderResult(root){
+    const currentQuestions = getCurrentQuestions();
+    const testName = state.testType === 'mock' && state.currentTest ? state.currentTest.name : 'WBSSC Group C & D (Section Wise Mock Test 1)';
+    const passingMarks = state.testType === 'mock' && state.currentTest ? state.currentTest.passingMarks : 60;
+
+    const card = document.createElement('div'); card.className='app-wrap';
+    let overallCorrect = 0;
+    currentQuestions.forEach(q => { if(state.answers[q.id] === q.answer) overallCorrect++; });
+
+    // Calculate percentages
+    const overallPercentage = ((overallCorrect / currentQuestions.length) * 100).toFixed(2);
+    const passed = overallPercentage >= passingMarks;
+
+    // Enhanced result colors
+    const resultStatusClass = passed ? 'result-perfect' : 'result-failed';
+    const resultStatusText = passed ? 'PASSED' : 'FAILED';
+
+    let analysisHtml = '<div class="result-box"><h3>Performance Analysis</h3>';
+    for(const sec of Object.keys(state.perSection)){
+      const obj = state.perSection[sec];
+      const percentage = ((obj.correct / obj.total) * 100).toFixed(2);
+      const sectionClass = percentage >= 70 ? 'result-correct' : percentage >= 50 ? 'result-missed' : 'result-wrong';
+      analysisHtml += `<p><strong>${escapeHtml(sec)}:</strong> <span class="${sectionClass}">${obj.correct} / ${obj.total} (${percentage}%)</span> — Incorrect/Not attempted: ${obj.wrong}</p>`;
+    }
+    analysisHtml += '</div>';
+
+    let answersHtml = '';
+    currentQuestions.forEach((q, idx) => {
+      const user = state.answers[q.id] || 'Not Attempted';
+      const correct = q.answer;
+      const isCorrect = (user === correct);
+      const cls = isCorrect ? 'result-correct' : 'result-wrong';
+      answersHtml += `
+<div class="question-box">
+<div><strong>Q${idx+1}.</strong> ${escapeHtml(q.q)}</div>
+<div style="margin-top:8px">Your answer: <span class="${cls}">${escapeHtml(user)}</span></div>
+<div>Correct answer: <span class="result-correct">${escapeHtml(correct)}</span></div>
+<div style="margin-top:6px"><em>Explanation:</em> ${escapeHtml(q.explanation)}</div>
+</div>
+      `;
+    });
+
+    card.innerHTML = `
+<div class="card">
+<h2>${testName}</h2>
+<div class="small">Test Completed</div>
+<div class="result-box">
+<h3>Result for ${escapeHtml(state.student?.name || '')}</h3>
+<p><strong>Overall Score: </strong> <span class="${resultStatusClass}">${overallCorrect} / ${currentQuestions.length} (${overallPercentage}%)</span></p>
+<p><strong>Status: </strong><span class="${resultStatusClass}">${resultStatusText}</span></p>
+<p><strong>Passing Marks: </strong> ${passingMarks}%</p>
+          ${analysisHtml}
+<hr/>
+<h3>Answer Review</h3>
+          ${answersHtml}
+<div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+<button id="downloadPdf" class="btn btn-green">Download Result as PDF</button>
+<button id="homeAfterResult" class="btn btn-ghost">Back to Home</button>
+</div>
+</div>
+</div>
+    `;
+    root.appendChild(card);
+
+    $('homeAfterResult').addEventListener('click', ()=> { state.view='landing'; state.answers={}; state.reviewMarked=[]; render(); });
+    $('downloadPdf').addEventListener('click', ()=> { downloadResultPdf(); });
+  }
+
+  // Admin dashboard with clean interface
+  function renderAdminDash(root){
+    const sortedRegistrations = [...getFilteredRegistrations()].sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+    const activeMockTests = mockTests.filter(test => test.isActive);
+    const registrationsByTest = getRegistrationsByTest();
+
+    // Group user results by test
+    const userResultsByTest = {};
+    userResults.forEach(result => {
+      const testName = result.testName;
+      if (!userResultsByTest[testName]) {
+        userResultsByTest[testName] = [];
+      }
+      userResultsByTest[testName].push(result);
+    });
+
+    const card = document.createElement('div'); card.className='app-wrap';
+
+    // Admin Tabs - Added security tab
+    const adminTabsHtml = `
+<div class="admin-tabs">
+<div class="admin-tab ${state.adminTab === 'stats' ? 'active' : ''}" data-tab="stats">Statistics</div>
+<div class="admin-tab ${state.adminTab === 'registrations' ? 'active' : ''}" data-tab="registrations">Registrations</div>
+<div class="admin-tab ${state.adminTab === 'users' ? 'active' : ''}" data-tab="users">User Results</div>
+<div class="admin-tab ${state.adminTab === 'mocktests' ? 'active' : ''}" data-tab="mocktests">Mock Tests</div>
+<div class="admin-tab ${state.adminTab === 'materials' ? 'active' : ''}" data-tab="materials">Study Materials</div>
+<div class="admin-tab ${state.adminTab === 'whatsapp' ? 'active' : ''}" data-tab="whatsapp">WhatsApp Settings</div>
+<div class="admin-tab ${state.adminTab === 'website' ? 'active' : ''}" data-tab="website">Website Settings</div>
+<div class="admin-tab ${state.adminTab === 'notices' ? 'active' : ''}" data-tab="notices">Notice Board</div>
+<div class="admin-tab ${state.adminTab === 'security' ? 'active' : ''}" data-tab="security">Admin Security</div>
+</div>
+    `;
+
+    // Statistics Tab
+    const statsHtml = state.adminTab === 'stats' ? `
+<div class="admin-section">
+<div class="admin-section-title">Global Statistics</div>
+<div class="stats-grid">
+<div class="stat-card">
+<div class="stat-number">${globalStats.totalVisitors.toLocaleString()}</div>
+<div class="stat-label">Total Visitors</div>
+</div>
+<div class="stat-card">
+<div class="stat-number">${globalStats.totalRegistrations.toLocaleString()}</div>
+<div class="stat-label">Total Registrations</div>
+</div>
+<div class="stat-card">
+<div class="stat-number">${globalStats.totalTestsTaken.toLocaleString()}</div>
+<div class="stat-label">Tests Completed</div>
+</div>
+<div class="stat-card">
+<div class="stat-number">${allRegistrations.length > 0 ? Math.round((globalStats.totalTestsTaken / globalStats.totalRegistrations) * 100) : 0}%</div>
+<div class="stat-label">Completion Rate</div>
+</div>
+</div>
+<div style="margin-top: 15px; text-align: center;">
+<button id="resetStats" class="btn btn-red">Reset All Statistics</button>
+<div class="small" style="margin-top: 8px;">Last reset: ${new Date(globalStats.lastReset).toLocaleDateString()}</div>
+</div>
+</div>
+    ` : '';
+
+    // Registrations Tab
+    const registrationsHtml = state.adminTab === 'registrations' ? `
+<div class="admin-section">
+<div class="admin-section-title">Test-wise Registration Details</div>
+
+<div class="test-filter">
+<select id="testFilter">
+<option value="all" ${state.adminRegFilter === 'all' ? 'selected' : ''}>All Tests</option>
+            ${Object.keys(registrationsByTest).map(testKey => {
+              const [testType, testName] = testKey.split('-');
+              const count = registrationsByTest[testKey].length;
+              return `<option value="${testKey}" ${state.adminRegFilter === testKey ? 'selected' : ''}>${testName} (${testType}) - ${count} users</option>`;
+            }).join('')}
+</select>
+<button id="applyFilter" class="btn btn-green">Apply Filter</button>
+<button id="exportRegistrations" class="btn btn-ghost">Export to CSV</button>
+<button id="clearRegistrations" class="btn btn-red">Clear ${state.adminRegFilter === 'all' ? 'All' : 'Filtered'}</button>
+</div>
+
+<div class="small" style="margin-bottom: 15px;">
+          Showing ${sortedRegistrations.length} registration${sortedRegistrations.length !== 1 ? 's' : ''}
+          ${state.adminRegFilter !== 'all' ? `for selected test` : 'across all tests'}
+</div>
+
+        ${sortedRegistrations.length > 0 ? `
+<div style="max-height: 400px; overflow-y: auto;">
+<table class="registrations-table">
+<thead>
+<tr>
+<th>Name</th>
+<th>Mobile</th>
+<th>District</th>
+<th>Test Type</th>
+<th>Test Name</th>
+<th>Date & Time</th>
+</tr>
+</thead>
+<tbody>
+                ${sortedRegistrations.map(reg => `
+<tr>
+<td>${escapeHtml(reg.name)}</td>
+<td>${escapeHtml(reg.mobile)}</td>
+<td>${escapeHtml(reg.district)}</td>
+<td>${escapeHtml(reg.testType)}</td>
+<td>${escapeHtml(reg.testName)}</td>
+<td>${new Date(reg.timestamp).toLocaleString()}</td>
+</tr>
+                `).join('')}
+</tbody>
+</table>
+</div>
+        ` : `
+<p>No registrations found for the selected filter.</p>
+        `}
+</div>
+    ` : '';
+
+    // User Results Tab
+    const usersHtml = state.adminTab === 'users' ? `
+<div class="admin-section">
+<div class="admin-section-title">User Results Dashboard</div>
+
+        ${Object.keys(userResultsByTest).length > 0 ? `
+          ${Object.keys(userResultsByTest).map(testName => {
+            const testResults = userResultsByTest[testName];
+            const avgScore = testResults.reduce((sum, result) => sum + (result.score / result.total * 100), 0) / testResults.length;
+            const passRate = (testResults.filter(result => result.passed).length / testResults.length * 100).toFixed(2);
+
+            return `
+<div class="test-section-divider">
+<div class="test-section-header">${testName} (${testResults.length} users)</div>
+<div class="small" style="margin-bottom: 15px;">
+                  Average Score: ${avgScore.toFixed(2)}% | Pass Rate: ${passRate}%
+</div>
+
+<div class="test-users-grid">
+                  ${testResults.map(result => {
+                    const percentage = ((result.score / result.total) * 100).toFixed(2);
+                    return `
+<div class="test-user-card">
+<div class="test-user-header">
+<div class="test-user-name">${escapeHtml(result.name)}</div>
+<div class="test-user-score ${result.passed ? 'result-correct' : 'result-wrong'}">${result.score}/${result.total} (${percentage}%)</div>
+</div>
+<div class="test-user-meta">
+                          Mobile: ${escapeHtml(result.mobile)} | District: ${escapeHtml(result.district)}
+</div>
+<div class="test-user-meta">
+                          Date: ${new Date(result.timestamp).toLocaleDateString()} | Status: <span class="${result.passed ? 'result-correct' : 'result-wrong'}">${result.passed ? 'PASSED' : 'FAILED'}</span>
+</div>
+<div style="margin-top: 8px; display: flex; gap: 5px;">
+<button class="btn btn-red btn-small delete-user-result" data-id="${result.id}">Delete</button>
+</div>
+</div>
+                    `;
+                  }).join('')}
+</div>
+</div>
+            `;
+          }).join('')}
+
+<div style="margin-top: 20px; text-align: center;">
+<button id="clearAllResults" class="btn btn-red">Clear All Results</button>
+</div>
+        ` : `
+<p>No user results available yet.</p>
+        `}
+</div>
+    ` : '';
+
+    // Mock Tests Tab with Enhanced Paste Section and Access Code
+    const mockTestsHtml = state.adminTab === 'mocktests' ? `
+<div class="admin-section">
+<div class="admin-section-title">Mock Test Management</div>
+
+<div class="pdf-upload-area">
+<h4>Upload MCQ PDF</h4>
+<p class="small">Upload a PDF containing MCQs to create a new mock test</p>
+<input type="file" id="pdfFile" accept=".pdf" style="margin: 10px 0;">
+
+<div class="paste-section">
+<div class="paste-section-header">
+<div class="paste-section-title">Enhanced MCQ Text Parser</div>
+</div>
+<div class="paste-section-content">
+<div class="mcq-format-guide">
+<h4>Enhanced Format Guide:</h4>
+<p><strong>Supported formats:</strong></p>
+<p>1. Q1. Question text?<br>A. Option A<br>B. Option B<br>C. Option C<br>D. Option D<br>Answer: A</p>
+<p>2. 1) Question text?<br>A) Option A<br>B) Option B<br>C) Option C<br>D) Option D<br>Correct: B</p>
+<p>3. Question text?<br>A. Option A<br>B. Option B<br>C. Option C<br>D. Option D<br>Key: C</p>
+<p><strong>Note:</strong> The parser can handle up to 100 questions. Questions without explicit answers will default to the first option.</p>
+</div>
+<textarea id="mcqText" class="paste-textarea" placeholder="Paste your MCQs here... Up to 100 questions supported." rows="10"></textarea>
+<button id="previewQuestions" class="btn btn-ghost">Preview Questions</button>
+<div id="pastePreview" class="paste-preview" style="display: none;">
+<div class="paste-preview-title">Preview (First 5 Questions)</div>
+<div id="previewContent"></div>
+</div>
+</div>
+</div>
+
+<div class="mock-test-settings">
+<div class="form-group">
+<label class="form-label">Test Name</label>
+<input type="text" id="testName" placeholder="Enter test name">
+</div>
+<div class="form-group">
+<label class="form-label">Test Description</label>
+<textarea id="testDescription" placeholder="Enter test description"></textarea>
+</div>
+<div class="form-group">
+<label class="form-label">Time Limit (minutes)</label>
+<input type="number" id="testTimeLimit" value="45" min="5" max="180">
+</div>
+<div class="form-group">
+<label class="form-label">Passing Marks (%)</label>
+<input type="number" id="testPassingMarks" value="60" min="0" max="100">
+</div>
+<div class="form-group">
+<label class="form-label">Access Code (5 digits)</label>
+<input type="text" id="testAccessCode" placeholder="Optional - 5 digit code" maxlength="5">
+<div class="small">Leave empty for no access code required</div>
+</div>
+<div class="form-group">
+<label class="form-label">Instructions</label>
+<textarea id="testInstructions" placeholder="Enter test instructions">Read each question carefully. Select the best answer. You cannot go back to previous questions.</textarea>
+</div>
+</div>
+
+<button id="createMockTest" class="btn btn-green">Create Mock Test</button>
+<div id="testCreationResult" style="margin-top: 10px;"></div>
+</div>
+
+<div style="margin-top: 20px;">
+<h4>Active Mock Tests</h4>
+          ${activeMockTests.length > 0 ? `
+<div class="mock-test-grid">
+              ${activeMockTests.map(test => `
+<div class="mock-test-card">
+<div class="mock-test-icon">📝</div>
+<div class="mock-test-name">${test.name}</div>
+<div class="mock-test-desc">${test.description}</div>
+<div class="mock-test-desc">${test.questions.length} questions • ${test.timeLimit} minutes</div>
+<div class="mock-test-desc">Passing: ${test.passingMarks}%</div>
+                ${test.accessCode ? `<div class="mock-test-desc" style="color: var(--accent);">🔒 Access Code: ${test.accessCode}</div>` : ''}
+<div style="margin-top: 10px; display: flex; gap: 5px;">
+<button class="btn btn-red btn-small delete-test" data-id="${test.id}">Delete</button>
+<button class="btn btn-ghost btn-small toggle-test" data-id="${test.id}">${test.isActive ? 'Deactivate' : 'Activate'}</button>
+</div>
+</div>
+              `).join('')}
+</div>
+          ` : `
+<p>No active mock tests available.</p>
+          `}
+</div>
+</div>
+    ` : '';
+
+    // Study Materials Tab
+    const materialsHtml = state.adminTab === 'materials' ? `
+<div class="admin-section">
+<div class="admin-section-title">Study Materials Management</div>
+
+<div class="material-form">
+<div class="form-group">
+<label class="form-label">Material Name</label>
+<input type="text" id="materialName" placeholder="Enter material name">
+</div>
+<div class="form-group">
+<label class="form-label">Material Description</label>
+<textarea id="materialDescription" placeholder="Enter material description"></textarea>
+</div>
+<div class="form-group">
+<label class="form-label">File URL</label>
+<input type="text" id="materialUrl" placeholder="Enter file URL">
+</div>
+<div class="form-group">
+<label class="form-label">File Type</label>
+<select id="materialType">
+<option value="pdf">PDF</option>
+<option value="doc">Document</option>
+<option value="video">Video</option>
+</select>
+</div>
+<button id="addMaterial" class="btn btn-green">Add Material</button>
+</div>
+
+<div style="margin-top: 20px;">
+<h4>Available Study Materials</h4>
+          ${studyMaterials.length > 0 ? `
+<div class="materials-grid">
+              ${studyMaterials.map(material => `
+<div class="material-card">
+<div class="material-icon">📄</div>
+<div class="material-name">${material.name}</div>
+<div class="material-desc">${material.description}</div>
+<div class="download-counter">📥 ${material.downloads || 0} downloads</div>
+<div style="margin-top: 10px;">
+<button class="btn btn-red btn-small delete-material" data-id="${material.id}">Delete</button>
+</div>
+</div>
+              `).join('')}
+</div>
+          ` : `
+<p>No study materials available.</p>
+          `}
+</div>
+</div>
+    ` : '';
+
+    // WhatsApp Settings Tab
+    const whatsappHtml = state.adminTab === 'whatsapp' ? `
+<div class="admin-section">
+<div class="admin-section-title">WhatsApp Settings</div>
+
+<div class="whatsapp-form">
+<div class="form-group">
+<label class="form-label">WhatsApp Number</label>
+<input type="text" id="whatsappNumber" value="${whatsappSettings.number}" placeholder="Enter WhatsApp number with country code">
+<div class="small">Format: 91XXXXXXXXXX (without +)</div>
+</div>
+<div class="form-group">
+<label class="form-label">Message Text</label>
+<textarea id="whatsappMessage" placeholder="Enter message to display">${whatsappSettings.message}</textarea>
+</div>
+<div class="form-group">
+<label class="form-label">
+<input type="checkbox" id="whatsappEnabled" ${whatsappSettings.enabled ? 'checked' : ''}>
+              Enable WhatsApp Section
+</label>
+</div>
+<button id="saveWhatsAppSettings" class="btn btn-green">Save WhatsApp Settings</button>
+</div>
+
+<div style="margin-top: 20px;">
+<h4>Preview</h4>
+<div class="whatsapp-section" style="margin-top: 15px;">
+<div class="whatsapp-header">
+<div class="whatsapp-logo">💬</div>
+<div class="whatsapp-title">Contact Us on WhatsApp</div>
+</div>
+<div class="whatsapp-content">
+<div class="whatsapp-message">${whatsappSettings.message}</div>
+<div class="whatsapp-number">${whatsappSettings.number}</div>
+<a href="https://wa.me/${whatsappSettings.number}" target="_blank" class="whatsapp-button">
+<span>💬</span>
+                Chat on WhatsApp
+</a>
+</div>
+</div>
+</div>
+</div>
+    ` : '';
+
+    // Website Settings Tab
+    const websiteHtml = state.adminTab === 'website' ? `
+<div class="admin-section">
+<div class="admin-section-title">Website Settings</div>
+
+<div class="website-form">
+<div class="form-group">
+<label class="form-label">Website Title</label>
+<input type="text" id="websiteTitle" value="${websiteSettings.title}" placeholder="Enter website title">
+<div class="small">This appears in the browser tab</div>
+</div>
+<div class="form-group">
+<label class="form-label">Welcome Title</label>
+<input type="text" id="welcomeTitle" value="${websiteSettings.welcomeTitle}" placeholder="Enter welcome title">
+<div class="small">Main heading on the landing page</div>
+</div>
+<div class="form-group">
+<label class="form-label">Welcome Description</label>
+<textarea id="welcomeText" placeholder="Enter welcome description">${websiteSettings.welcomeText}</textarea>
+<div class="small">Description text below the welcome title</div>
+</div>
+
+<div class="text-customization">
+<div class="text-customization-title">Landing Page Design</div>
+
+<div class="form-group">
+<label class="form-label">Template</label>
+<div class="template-preview">
+<div class="template-option ${websiteSettings.landingPage.template === 'professional' ? 'selected' : ''}" data-template="professional">
+<div class="template-preview-box" style="background: linear-gradient(135deg, #2c5aa0 0%, #3a7bd5 100%);">Professional</div>
+<div class="template-name">Professional</div>
+</div>
+<div class="template-option ${websiteSettings.landingPage.template === 'modern' ? 'selected' : ''}" data-template="modern">
+<div class="template-preview-box" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">Modern</div>
+<div class="template-name">Modern</div>
+</div>
+<div class="template-option ${websiteSettings.landingPage.template === 'gradient' ? 'selected' : ''}" data-template="gradient">
+<div class="template-preview-box" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">Gradient</div>
+<div class="template-name">Gradient</div>
+</div>
+<div class="template-option ${websiteSettings.landingPage.template === 'dark' ? 'selected' : ''}" data-template="dark">
+<div class="template-preview-box" style="background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);">Dark</div>
+<div class="template-name">Dark</div>
+</div>
+</div>
+</div>
+
+<div class="form-group">
+<label class="form-label">Background Color</label>
+<input type="color" id="landingBackgroundColor" value="${websiteSettings.landingPage.backgroundColor}">
+</div>
+
+<div class="form-group">
+<label class="form-label">Texture</label>
+<div class="texture-preview">
+<div class="texture-option ${websiteSettings.landingPage.texture === 'none' ? 'selected' : ''}" data-texture="none">
+<div class="texture-preview-box" style="background: ${websiteSettings.landingPage.backgroundColor};">None</div>
+<div class="template-name">None</div>
+</div>
+<div class="texture-option ${websiteSettings.landingPage.texture === 'woven' ? 'selected' : ''}" data-texture="woven">
+<div class="texture-preview-box texture-woven" style="background: ${websiteSettings.landingPage.backgroundColor};">Woven</div>
+<div class="template-name">Woven</div>
+</div>
+<div class="texture-option ${websiteSettings.landingPage.texture === 'dots' ? 'selected' : ''}" data-texture="dots">
+<div class="texture-preview-box texture-dots" style="background: ${websiteSettings.landingPage.backgroundColor};">Dots</div>
+<div class="template-name">Dots</div>
+</div>
+<div class="texture-option ${websiteSettings.landingPage.texture === 'lines' ? 'selected' : ''}" data-texture="lines">
+<div class="texture-preview-box texture-lines" style="background: ${websiteSettings.landingPage.backgroundColor};">Lines</div>
+<div class="template-name">Lines</div>
+</div>
+<div class="texture-option ${websiteSettings.landingPage.texture === 'grid' ? 'selected' : ''}" data-texture="grid">
+<div class="texture-preview-box texture-grid" style="background: ${websiteSettings.landingPage.backgroundColor};">Grid</div>
+<div class="template-name">Grid</div>
+</div>
+</div>
+</div>
+
+<div class="text-customization-title" style="margin-top: 20px;">Text Customization</div>
+<div class="customization-grid">
+<div class="customization-group">
+<label class="customization-label">Landing Page Text Color</label>
+<input type="color" id="landingColor" value="${websiteSettings.textCustomization.landing.color}">
+</div>
+<div class="customization-group">
+<label class="customization-label">Landing Page Font</label>
+<select id="landingFont">
+<option value="Inter" ${websiteSettings.textCustomization.landing.font === 'Inter' ? 'selected' : ''}>Inter</option>
+<option value="Arial" ${websiteSettings.textCustomization.landing.font === 'Arial' ? 'selected' : ''}>Arial</option>
+<option value="Georgia" ${websiteSettings.textCustomization.landing.font === 'Georgia' ? 'selected' : ''}>Georgia</option>
+<option value="Times New Roman" ${websiteSettings.textCustomization.landing.font === 'Times New Roman' ? 'selected' : ''}>Times New Roman</option>
+</select>
+</div>
+<div class="customization-group">
+<label class="customization-label">Landing Page Font Size</label>
+<select id="landingSize">
+<option value="14px" ${websiteSettings.textCustomization.landing.size === '14px' ? 'selected' : ''}>Small</option>
+<option value="16px" ${websiteSettings.textCustomization.landing.size === '16px' ? 'selected' : ''}>Medium</option>
+<option value="18px" ${websiteSettings.textCustomization.landing.size === '18px' ? 'selected' : ''}>Large</option>
+</select>
+</div>
+<div class="customization-group">
+<label class="customization-label">Test Page Text Color</label>
+<input type="color" id="testColor" value="${websiteSettings.textCustomization.test.color}">
+</div>
+<div class="customization-group">
+<label class="customization-label">Test Page Font</label>
+<select id="testFont">
+<option value="Inter" ${websiteSettings.textCustomization.test.font === 'Inter' ? 'selected' : ''}>Inter</option>
+<option value="Arial" ${websiteSettings.textCustomization.test.font === 'Arial' ? 'selected' : ''}>Arial</option>
+<option value="Georgia" ${websiteSettings.textCustomization.test.font === 'Georgia' ? 'selected' : ''}>Georgia</option>
+<option value="Times New Roman" ${websiteSettings.textCustomization.test.font === 'Times New Roman' ? 'selected' : ''}>Times New Roman</option>
+</select>
+</div>
+<div class="customization-group">
+<label class="customization-label">Test Page Font Size</label>
+<select id="testSize">
+<option value="14px" ${websiteSettings.textCustomization.test.size === '14px' ? 'selected' : ''}>Small</option>
+<option value="16px" ${websiteSettings.textCustomization.test.size === '16px' ? 'selected' : ''}>Medium</option>
+<option value="18px" ${websiteSettings.textCustomization.test.size === '18px' ? 'selected' : ''}>Large</option>
+</select>
+</div>
+<div class="customization-group">
+<label class="customization-label">Admin Page Text Color</label>
+<input type="color" id="adminColor" value="${websiteSettings.textCustomization.admin.color}">
+</div>
+<div class="customization-group">
+<label class="customization-label">Admin Page Font</label>
+<select id="adminFont">
+<option value="Inter" ${websiteSettings.textCustomization.admin.font === 'Inter' ? 'selected' : ''}>Inter</option>
+<option value="Arial" ${websiteSettings.textCustomization.admin.font === 'Arial' ? 'selected' : ''}>Arial</option>
+<option value="Georgia" ${websiteSettings.textCustomization.admin.font === 'Georgia' ? 'selected' : ''}>Georgia</option>
+<option value="Times New Roman" ${websiteSettings.textCustomization.admin.font === 'Times New Roman' ? 'selected' : ''}>Times New Roman</option>
+</select>
+</div>
+<div class="customization-group">
+<label class="customization-label">Admin Page Font Size</label>
+<select id="adminSize">
+<option value="12px" ${websiteSettings.textCustomization.admin.size === '12px' ? 'selected' : ''}>Small</option>
+<option value="14px" ${websiteSettings.textCustomization.admin.size === '14px' ? 'selected' : ''}>Medium</option>
+<option value="16px" ${websiteSettings.textCustomization.admin.size === '16px' ? 'selected' : ''}>Large</option>
+</select>
+</div>
+</div>
+</div>
+
+<button id="saveWebsiteSettings" class="btn btn-green">Save Website Settings</button>
+</div>
+
+<div style="margin-top: 20px;">
+<h4>Preview</h4>
+<div class="welcome-section" style="margin-top: 15px;">
+<h1 class="welcome-title">${websiteSettings.welcomeTitle}</h1>
+<p class="welcome-text">
+              ${websiteSettings.welcomeText}
+</p>
+</div>
+</div>
+</div>
+    ` : '';
+
+    // Notice Board Tab
+    const noticesHtml = state.adminTab === 'notices' ? `
+<div class="admin-section">
+<div class="admin-section-title">Notice Board Management</div>
+
+<div class="notice-form">
+<div class="form-group">
+<label class="form-label">Notice Date</label>
+<input type="date" id="noticeDate" value="${new Date().toISOString().split('T')[0]}">
+</div>
+<div class="form-group">
+<label class="form-label">Notice Text</label>
+<textarea id="noticeText" placeholder="Enter notice text"></textarea>
+</div>
+<div class="form-group">
+<label class="form-label">Notice Type</label>
+<select id="noticeType">
+<option value="Update">Update</option>
+<option value="Feature">Feature</option>
+<option value="Maintenance">Maintenance</option>
+<option value="Important">Important</option>
+<option value="Alert">Alert</option>
+</select>
+</div>
+<button id="addNotice" class="btn btn-green">Add Notice</button>
+</div>
+
+<div style="margin-top: 20px;">
+<h4>Current Notices</h4>
+          ${noticeBoard.length > 0 ? `
+<div class="notice-list-admin">
+              ${noticeBoard.map(notice => `
+<div class="notice-item-admin">
+<div class="notice-info">
+<div><strong>${notice.date}</strong> - ${notice.text}</div>
+<div class="small">Type: ${notice.type} | Status: ${notice.active ? 'Active' : 'Inactive'}</div>
+</div>
+<div class="notice-actions">
+<button class="btn btn-ghost btn-small toggle-notice" data-id="${notice.id}">${notice.active ? 'Deactivate' : 'Activate'}</button>
+<button class="btn btn-red btn-small delete-notice" data-id="${notice.id}">Delete</button>
+</div>
+</div>
+              `).join('')}
+</div>
+          ` : `
+<p>No notices available.</p>
+          `}
+</div>
+</div>
+    ` : '';
+
+    // Admin Security Tab (NEW)
+    const securityHtml = state.adminTab === 'security' ? `
+<div class="admin-section">
+<div class="admin-section-title">Admin Security Settings</div>
+
+<div class="website-form">
+<div class="form-group">
+<label class="form-label">Current Admin ID</label>
+<input type="text" id="currentAdminId" value="${base64Decode(adminCredentials.id)}" readonly>
+<div class="small">Current admin ID (read-only)</div>
+</div>
+<div class="form-group">
+<label class="form-label">New Admin ID</label>
+<input type="text" id="newAdminId" placeholder="Enter new admin ID">
+<div class="small">Set a new admin login ID</div>
+</div>
+<div class="form-group">
+<label class="form-label">New Password</label>
+<input type="password" id="newAdminPassword" placeholder="Enter new password">
+<div class="small">Set a new admin password</div>
+</div>
+<div class="form-group">
+<label class="form-label">Confirm New Password</label>
+<input type="password" id="confirmAdminPassword" placeholder="Confirm new password">
+<div class="small">Re-enter the new password</div>
+</div>
+<button id="updateAdminCredentials" class="btn btn-green">Update Admin Credentials</button>
+</div>
+
+<div style="margin-top: 20px; padding: 15px; background: rgba(255,0,0,0.1); border-radius: 8px; border: 1px solid rgba(255,0,0,0.3);">
+<h4 style="color: #ff5252; margin-top: 0;">Security Notice</h4>
+<p class="small" style="color: #ff5252;">
+<strong>Important:</strong> Changing admin credentials will immediately update the login information.
+Make sure to remember the new credentials as you will need them to access the admin panel in the future.
+</p>
+</div>
+</div>
+    ` : '';
+
+    card.innerHTML = `
+<div class="card">
+<h2>Admin Dashboard</h2>
+<div class="small" style="margin-bottom: 15px;">
+          Last admin access: ${securityState.lastAdminAccess ? new Date(securityState.lastAdminAccess).toLocaleString() : 'Never'}
+</div>
+        ${adminTabsHtml}
+        ${statsHtml}
+        ${registrationsHtml}
+        ${usersHtml}
+        ${mockTestsHtml}
+        ${materialsHtml}
+        ${whatsappHtml}
+        ${websiteHtml}
+        ${noticesHtml}
+        ${securityHtml}
+
+<div class="controls" style="margin-top:20px">
+<button id="adminLogout" class="btn btn-red">Logout</button>
+<button id="homeFromAdmin" class="btn btn-ghost">Back to Home</button>
+</div>
+</div>
+    `;
+    root.appendChild(card);
+
+    // Tab switching
+    card.querySelectorAll('.admin-tab').forEach(tab => {
+      tab.addEventListener('click', (e) => {
+        state.adminTab = e.target.dataset.tab;
+        render();
+      });
+    });
+
+    // Test filter for registrations
+    $('applyFilter')?.addEventListener('click', () => {
+      state.adminRegFilter = $('testFilter').value;
+      render();
+    });
+
+    // Preview Questions for Mock Test Creation
+    $('previewQuestions')?.addEventListener('click', () => {
+      const mcqText = $('mcqText').value;
+      if (!mcqText.trim()) {
+        alert('Please paste some MCQ text first.');
+        return;
+      }
+
+      const parsedQuestions = parseMCQText(mcqText);
+      const preview = $('pastePreview');
+      const previewContent = $('previewContent');
+
+      if (parsedQuestions.length === 0) {
+        previewContent.innerHTML = '<p>No questions could be parsed from the text. Please check the format.</p>';
+      } else {
+        let previewHtml = '';
+        const questionsToShow = Math.min(5, parsedQuestions.length);
+       
+        for (let i = 0; i < questionsToShow; i++) {
+          const q = parsedQuestions[i];
+          previewHtml += `
+<div class="preview-question">
+<div class="preview-question-text">${i+1}. ${escapeHtml(q.q)}</div>
+<div class="preview-options">
+            ${q.options.map((opt, idx) => `
+<div class="preview-option">${String.fromCharCode(65 + idx)}) ${escapeHtml(opt)}</div>
+            `).join('')}
+</div>
+<div class="preview-answer">Answer: ${escapeHtml(q.answer)}</div>
+</div>
+          `;
+        }
+       
+        previewContent.innerHTML = previewHtml;
+        preview.style.display = 'block';
+       
+        if (parsedQuestions.length > 100) {
+          previewContent.innerHTML += `<p style="color: var(--danger); margin-top: 10px;">Warning: More than 100 questions detected. Only the first 100 will be used.</p>`;
+        }
+      }
+    });
+
+    // Mock Test Creation with Access Code
+    $('createMockTest')?.addEventListener('click', () => {
+      const testName = $('testName').value;
+      const testDescription = $('testDescription').value;
+      const timeLimit = parseInt($('testTimeLimit').value);
+      const passingMarks = parseInt($('testPassingMarks').value);
+      const accessCode = $('testAccessCode').value.trim();
+      const instructions = $('testInstructions').value;
+      const fileInput = $('pdfFile');
+      const mcqText = $('mcqText').value;
+
+      if (!testName || !testDescription) {
+        alert('Please fill all required fields');
+        return;
+      }
+
+      let parsedQuestions = [];
+
+      // Try to parse MCQ text first
+      if (mcqText.trim()) {
+        parsedQuestions = parseMCQText(mcqText);
+        // Limit to 100 questions
+        if (parsedQuestions.length > 100) {
+          parsedQuestions = parsedQuestions.slice(0, 100);
+        }
+      }
+      // If no MCQ text, try PDF (simulated)
+      else if (fileInput && fileInput.files.length > 0) {
+        // In a real implementation, this would parse the actual PDF file
+        // For now, we'll use a simulated parsing
+        parsedQuestions = questions.slice(0, 5);
+      }
+      // If neither, use sample questions
+      else {
+        parsedQuestions = questions.slice(0, 5);
+      }
+
+      addMockTest({
+        name: testName,
+        description: testDescription,
+        questions: parsedQuestions,
+        timeLimit: timeLimit,
+        passingMarks: passingMarks,
+        accessCode: accessCode || null,
+        instructions: instructions
+      });
+
+      alert(`Mock test "${testName}" created successfully with ${parsedQuestions.length} questions! ${accessCode ? 'Access code: ' + accessCode : ''}`);
+      $('testName').value = '';
+      $('testDescription').value = '';
+      $('testTimeLimit').value = '45';
+      $('testPassingMarks').value = '60';
+      $('testAccessCode').value = '';
+      $('testInstructions').value = 'Read each question carefully. Select the best answer. You cannot go back to previous questions.';
+      $('mcqText').value = '';
+      if (fileInput) fileInput.value = '';
+
+      const resultDiv = $('testCreationResult');
+      if (resultDiv) {
+        resultDiv.innerHTML = `
+<div style="color: #4caf50; background: rgba(76, 175, 80, 0.1); padding: 10px; border-radius: 5px;">
+<strong>Success!</strong> Created ${parsedQuestions.length} questions for the mock test.
+</div>
+        `;
+      }
+
+      render();
+    });
+
+    // Add Study Material
+    $('addMaterial')?.addEventListener('click', () => {
+      const name = $('materialName').value;
+      const description = $('materialDescription').value;
+      const fileUrl = $('materialUrl').value;
+      const fileType = $('materialType').value;
+
+      if (!name || !description || !fileUrl) {
+        alert('Please fill all fields');
+        return;
+      }
+
+      addMaterial({ name, description, fileUrl, fileType });
+      alert('Study material added successfully!');
+      $('materialName').value = '';
+      $('materialDescription').value = '';
+      $('materialUrl').value = '';
+      render();
+    });
+
+    // WhatsApp Settings
+    $('saveWhatsAppSettings')?.addEventListener('click', () => {
+      const number = $('whatsappNumber').value;
+      const message = $('whatsappMessage').value;
+      const enabled = $('whatsappEnabled').checked;
+
+      if (!number || !message) {
+        alert('Please fill all required fields');
+        return;
+      }
+
+      updateWhatsAppSettings({
+        number: number,
+        message: message,
+        enabled: enabled
+      });
+
+      alert('WhatsApp settings saved successfully!');
+      render();
+    });
+
+    // Website Settings with Text Customization and Landing Page Templates
+    $('saveWebsiteSettings')?.addEventListener('click', () => {
+      const title = $('websiteTitle').value;
+      const welcomeTitle = $('welcomeTitle').value;
+      const welcomeText = $('welcomeText').value;
+
+      if (!title || !welcomeTitle || !welcomeText) {
+        alert('Please fill all required fields');
+        return;
+      }
+
+      // Get landing page customization values
+      const template = document.querySelector('.template-option.selected')?.dataset.template || 'professional';
+      const backgroundColor = $('landingBackgroundColor').value;
+      const texture = document.querySelector('.texture-option.selected')?.dataset.texture || 'woven';
+     
+      // Get text customization values
+      const landingColor = $('landingColor').value;
+      const landingFont = $('landingFont').value;
+      const landingSize = $('landingSize').value;
+     
+      const testColor = $('testColor').value;
+      const testFont = $('testFont').value;
+      const testSize = $('testSize').value;
+     
+      const adminColor = $('adminColor').value;
+      const adminFont = $('adminFont').value;
+      const adminSize = $('adminSize').value;
+
+      updateWebsiteSettings({
+        title: title,
+        welcomeTitle: welcomeTitle,
+        welcomeText: welcomeText,
+        landingPage: {
+          template: template,
+          backgroundColor: backgroundColor,
+          texture: texture
+        },
+        textCustomization: {
+          landing: { color: landingColor, font: landingFont, size: landingSize },
+          test: { color: testColor, font: testFont, size: testSize },
+          admin: { color: adminColor, font: adminFont, size: adminSize }
+        }
+      });
+
+      alert('Website settings saved successfully!');
+      render();
+    });
+
+    // Template and texture selection
+    card.querySelectorAll('.template-option').forEach(option => {
+      option.addEventListener('click', (e) => {
+        card.querySelectorAll('.template-option').forEach(opt => opt.classList.remove('selected'));
+        e.currentTarget.classList.add('selected');
+      });
+    });
+
+    card.querySelectorAll('.texture-option').forEach(option => {
+      option.addEventListener('click', (e) => {
+        card.querySelectorAll('.texture-option').forEach(opt => opt.classList.remove('selected'));
+        e.currentTarget.classList.add('selected');
+      });
+    });
+
+    // Notice Management
+    $('addNotice')?.addEventListener('click', () => {
+      const date = $('noticeDate').value;
+      const text = $('noticeText').value;
+      const type = $('noticeType').value;
+
+      if (!date || !text) {
+        alert('Please fill all required fields');
+        return;
+      }
+
+      addNotice({
+        date: date,
+        text: text,
+        type: type
+      });
+
+      alert('Notice added successfully!');
+      $('noticeDate').value = new Date().toISOString().split('T')[0];
+      $('noticeText').value = '';
+      render();
+    });
+
+    // Admin Security Management
+    $('updateAdminCredentials')?.addEventListener('click', () => {
+      const newId = $('newAdminId').value.trim();
+      const newPassword = $('newAdminPassword').value;
+      const confirmPassword = $('confirmAdminPassword').value;
+
+      if (!newId || !newPassword) {
+        alert('Please fill all required fields');
+        return;
+      }
+
+      if (newPassword !== confirmPassword) {
+        alert('Passwords do not match. Please confirm your new password.');
+        return;
+      }
+
+      if (newPassword.length < 6) {
+        alert('Password should be at least 6 characters long.');
+        return;
+      }
+
+      if (confirm('Are you sure you want to update the admin credentials? You will need to use the new credentials to login next time.')) {
+        const success = updateAdminCredentials(newId, newPassword);
+        if (success) {
+          alert('Admin credentials updated successfully!');
+          $('newAdminId').value = '';
+          $('newAdminPassword').value = '';
+          $('confirmAdminPassword').value = '';
+          render();
+        } else {
+          alert('Failed to update admin credentials. Please try again.');
+        }
+      }
+    });
+
+    // Reset Statistics
+    $('resetStats')?.addEventListener('click', () => {
+      if (confirm('Are you sure you want to reset ALL statistics? This cannot be undone.')) {
+        globalStats = {
+          totalVisitors: 0,
+          totalRegistrations: 0,
+          totalTestsTaken: 0,
+          lastReset: new Date().toISOString()
+        };
+        allRegistrations = [];
+        localStorage.setItem('noscience_global_stats', JSON.stringify(globalStats));
+        localStorage.setItem('noscience_all_registrations', JSON.stringify(allRegistrations));
+        alert('All statistics have been reset.');
+        render();
+      }
+    });
+
+    // Export Registrations
+    $('exportRegistrations')?.addEventListener('click', () => {
+      const registrationsToExport = getFilteredRegistrations();
+      if (registrationsToExport.length === 0) {
+        alert('No registrations to export.');
+        return;
+      }
+
+      let csv = 'Name,Mobile,District,Test Type,Test Name,Date\n';
+      registrationsToExport.forEach(reg => {
+        csv += `"${reg.name}","${reg.mobile}","${reg.district}","${reg.testType}","${reg.testName}","${new Date(reg.timestamp).toLocaleString()}"\n`;
+      });
+
+      const blob = new Blob([csv], { type: 'text/csv' });
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `registrations_${state.adminRegFilter === 'all' ? 'all' : state.adminRegFilter}_${new Date().toISOString().split('T')[0]}.csv`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      window.URL.revokeObjectURL(url);
+
+      alert('Registrations exported successfully!');
+    });
+
+    // Clear Registrations
+    $('clearRegistrations')?.addEventListener('click', () => {
+      const confirmMessage = state.adminRegFilter === 'all'
+        ? 'Are you sure you want to clear ALL registration records? This cannot be undone.'
+        : `Are you sure you want to clear registration records for the selected test? This cannot be undone.`;
+
+      if (confirm(confirmMessage)) {
+        clearRegistrationsForTest(state.adminRegFilter);
+        alert(state.adminRegFilter === 'all' ? 'All registration records have been cleared.' : 'Filtered registration records have been cleared.');
+        render();
+      }
+    });
+
+    // Clear All Results
+    $('clearAllResults')?.addEventListener('click', () => {
+      if (confirm('Are you sure you want to clear ALL user results? This cannot be undone.')) {
+        clearAllUserResults();
+        alert('All user results have been cleared.');
+        render();
+      }
+    });
+
+    // Delete buttons
+    card.querySelectorAll('.delete-material').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const id = parseInt(e.target.dataset.id);
+        if (confirm('Are you sure you want to delete this material?')) {
+          deleteMaterial(id);
+          render();
+        }
+      });
+    });
+
+    card.querySelectorAll('.delete-test').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const id = parseInt(e.target.dataset.id);
+        if (confirm('Are you sure you want to delete this mock test?')) {
+          deleteMockTest(id);
+          render();
+        }
+      });
+    });
+
+    card.querySelectorAll('.delete-user-result').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const id = parseInt(e.target.dataset.id);
+        if (confirm('Are you sure you want to delete this user result?')) {
+          deleteUserResult(id);
+          render();
+        }
+      });
+    });
+
+    card.querySelectorAll('.delete-notice').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const id = parseInt(e.target.dataset.id);
+        if (confirm('Are you sure you want to delete this notice?')) {
+          deleteNotice(id);
+          render();
+        }
+      });
+    });
+
+    card.querySelectorAll('.toggle-test').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const id = parseInt(e.target.dataset.id);
+        toggleMockTestStatus(id);
+        render();
+      });
+    });
+
+    card.querySelectorAll('.toggle-notice').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const id = parseInt(e.target.dataset.id);
+        toggleNoticeStatus(id);
+        render();
+      });
+    });
+
+    $('adminLogout').addEventListener('click', ()=> {
+      state.view='landing';
+      render();
+    });
+    $('homeFromAdmin').addEventListener('click', ()=> { state.view='landing'; render(); });
+  }
+
+  // -------------------- Timer helpers --------------------
+  function startTimer(){
+    stopTimer();
+    state.timerId = setInterval(()=>{
+      state.timeLeft -= 1;
+      const tEl = document.getElementById('timer');
+      if(tEl) tEl.innerText = formatTime(state.timeLeft);
+
+      if(state.timeLeft === 10 * 60){ alert('10 minutes remaining!'); }
+
+      if(state.timeLeft <= 0){
+        stopTimer();
+        alert('Time is up — submitting the test');
+        submitTest();
+      }
+    }, 1000);
+  }
+
+  function stopTimer(){ if(state.timerId) clearInterval(state.timerId); state.timerId = null; }
+
+  // -------------------- PDF download (Fixed) --------------------
+  function downloadResultPdf(){
+    if (typeof html2pdf === 'undefined') {
+      const script = document.createElement('script');
+      script.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js';
+      script.onload = function() {
+        generatePdf();
+      };
+      document.head.appendChild(script);
+      return;
+    }
+    generatePdf();
+  }
+
+  function generatePdf() {
+    const currentQuestions = getCurrentQuestions();
+    const testName = state.testType === 'mock' && state.currentTest ? state.currentTest.name : 'WBSSC Group C & D (Section Wise Mock Test 1)';
+    const passingMarks = state.testType === 'mock' && state.currentTest ? state.currentTest.passingMarks : 60;
+
+    let overallCorrect = 0;
+    currentQuestions.forEach(q => { if(state.answers[q.id] === q.answer) overallCorrect++; });
+    const overallPercentage = ((overallCorrect / currentQuestions.length) * 100).toFixed(2);
+    const passed = overallPercentage >= passingMarks;
+
+    const tempElement = document.createElement('div');
+    tempElement.style.padding = '20px';
+    tempElement.style.backgroundColor = '#f0f8ff';
+    tempElement.style.color = '#1a4b8c';
+    tempElement.style.fontFamily = 'Arial, sans-serif';
+
+    let answersHtml = '';
+    currentQuestions.forEach((q, idx) => {
+      const user = state.answers[q.id] || 'Not Attempted';
+      const correct = q.answer;
+      const isCorrect = (user === correct);
+      answersHtml += `
+<div style="margin-bottom: 15px; padding: 10px; background: #f5f9ff; border-radius: 5px; border: 1px solid #cce0ff;">
+<div><strong>Q${idx+1}.</strong> ${escapeHtml(q.q)}</div>
+<div style="margin-top:5px">Your answer: <span style="color: ${isCorrect ? '#28a745' : '#dc3545'}; font-weight: bold;">${escapeHtml(user)}</span></div>
+<div>Correct answer: <span style="color: #28a745; font-weight: bold;">${escapeHtml(correct)}</span></div>
+<div style="margin-top:5px"><em>Explanation:</em> ${escapeHtml(q.explanation)}</div>
+</div>
+      `;
+    });
+
+    tempElement.innerHTML = `
+<div style="text-align: center; margin-bottom: 20px; border-bottom: 2px solid #2c5aa0; padding-bottom: 15px;">
+<h1 style="color: #2c5aa0; margin-bottom: 5px; font-size: 24px;">noScience</h1>
+<h2 style="margin-top: 0; color: #1a4b8c; font-size: 18px;">WBSSC Group C & D - Test Result</h2>
+<h3 style="color: #2a6fc9; font-size: 16px;">${testName}</h3>
+<p style="color: #2a6fc9; font-size: 14px;">Generated on ${new Date().toLocaleDateString()} at ${new Date().toLocaleTimeString()}</p>
+</div>
+<div style="margin-bottom: 20px;">
+<h3 style="color: #1a4b8c; border-bottom: 1px solid #ddd; padding-bottom: 8px;">Student Information</h3>
+<p style="color: #1a4b8c;"><strong>Name:</strong> ${state.student?.name || 'N/A'}</p>
+<p style="color: #1a4b8c;"><strong>District:</strong> ${state.student?.district || 'N/A'}</p>
+<p style="color: #1a4b8c;"><strong>Mobile:</strong> ${state.student?.mobile || 'N/A'}</p>
+</div>
+<div style="margin-bottom: 20px;">
+<h3 style="color: #1a4b8c; border-bottom: 1px solid #ddd; padding-bottom: 8px;">Test Result</h3>
+<p style="color: #1a4b8c;"><strong>Overall Score: </strong> <span style="color: ${passed ? '#28a745' : '#dc3545'}; font-weight: bold;">${overallCorrect} / ${currentQuestions.length} (${overallPercentage}%)</span></p>
+<p style="color: #1a4b8c;"><strong>Status: </strong><span style="color: ${passed ? '#28a745' : '#dc3545'}; font-weight: bold;">${passed ? 'PASSED' : 'FAILED'}</span></p>
+<p style="color: #1a4b8c;"><strong>Passing Marks: </strong> ${passingMarks}%</p>
+</div>
+<div style="margin-bottom: 20px;">
+<h3 style="color: #1a4b8c; border-bottom: 1px solid #ddd; padding-bottom: 8px;">Answer Review</h3>
+${answersHtml}
+</div>
+    `;
+
+    document.body.appendChild(tempElement);
+
+    const opt = {
+      margin: 0.5,
+      filename: `WBSSC_Test_Result_${(state.student?.name || 'student').replace(/\s+/g,'_')}.pdf`,
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: {
+        scale: 2,
+        useCORS: true,
+        scrollY: 0,
+        backgroundColor: '#f0f8ff',
+        logging: false
+      },
+      jsPDF: {
+        unit: 'in',
+        format: 'a4',
+        orientation: 'portrait'
+      }
+    };
+
+    html2pdf().set(opt).from(tempElement).save().then(() => {
+      document.body.removeChild(tempElement);
+    }).catch(error => {
+      console.error('PDF generation error:', error);
+      alert('Error generating PDF. Please try again.');
+      document.body.removeChild(tempElement);
+    });
+  }
+
+  // -------------------- Initialization --------------------
+  (function initializeApp(){
+    initializeVisitorCount();
+    document.getElementById('pageTitle').textContent = websiteSettings.title;
+
+    (function validateQuestionsOnLoad(){
+      const required = ['id','section','q','options','answer','explanation'];
+      if(!Array.isArray(questions) || questions.length < 5){
+        console.warn('Warning: questions array length is', questions.length, '- expected 5.');
+      }
+      questions.forEach((qq,idx) => {
+        required.forEach(f => { if(!(f in qq)){ console.warn(`Question index ${idx} missing ${f}`); } });
+        if(!Array.isArray(qq.options) || qq.options.length < 2) console.warn(`Question id ${qq.id} has invalid options`);
+      });
+    })();
+
+    render();
+  })();
+
+  // Expose some functions globally for event listeners inside generated HTML
+  window.render = render;
+  window.startTimer = startTimer;
+  window.stopTimer = stopTimer;
+  window.goNext = goNext;
+  window.preSubmitAlert = preSubmitAlert;
+  window.submitTest = submitTest;
+  window.downloadResultPdf = downloadResultPdf;
+</script>
+
+<!-- html2pdf (for PDF download) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"e3c1c9af36de41759418005494a48906","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
